@@ -14,8 +14,8 @@
   --dark:       #1C1917;   /* 다크 그레인 */
   --white:      #FDFBF6;
 
-  /* 헤드라인: 아리따부리(아모레퍼시픽, 웹폰트) → 웜 명조 폴백 */
-  --serif: 'Arita Buri', 'Maru Buri', 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  /* 헤드라인: 조선일보명조(로컬/산돌구름) → 마루 부리 → 웹폰트 폴백 */
+  --serif: '조선일보명조', 'ChosunilboNM', '마루 부리 중간', 'MaruBuri', 'Gowun Batang', 'Noto Serif KR', serif;
   --sans:  'Pretendard Variable', Pretendard, sans-serif;
 }
 
@@ -68,14 +68,14 @@ a { color: inherit; text-decoration: none; }
 }
 .headline {
   font-family: var(--serif);
-  font-weight: 700;
+  font-weight: 400;
   font-size: clamp(30px, 4.2vw, 52px);
   line-height: 1.62;
   text-wrap: balance;
 }
 .h-headline {
   font-family: var(--serif);
-  font-weight: 700;
+  font-weight: 400;
   font-size: clamp(26px, 3.4vw, 44px);
   line-height: 1.5;
   margin-bottom: 28px;
@@ -254,7 +254,7 @@ a { color: inherit; text-decoration: none; }
 }
 .v-headline {
   font-family: var(--serif);
-  font-weight: 700;
+  font-weight: 400;
   font-size: clamp(30px, 3vw, 42px);
   line-height: 1.3;
   writing-mode: vertical-rl;
@@ -262,12 +262,21 @@ a { color: inherit; text-decoration: none; }
 }
 .v-rule { width: 1px; align-self: stretch; background: rgba(42, 39, 36, .5); }
 
-/* 낙관 도장 — 스토리카드에서 추출한 진짜 전서체 인장 */
+/* 낙관 도장 */
 .seal {
   margin-top: 40px;
-  width: 34px; height: 112px;
-  background: url('../assets/img/seal.png') center / contain no-repeat;
-  font-size: 0;              /* 내부 대체텍스트 숨김 */
+  width: 46px; height: 58px;
+  border: 1.5px solid var(--seal-red);
+  color: var(--seal-red);
+  font-family: var(--serif);
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: .18em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  writing-mode: vertical-rl;
 }
 
 /* ===== 풀스크린 사진 섹션 (S4/S7) ===== */
@@ -292,7 +301,7 @@ a { color: inherit; text-decoration: none; }
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 .ing-strip figure { position: relative; overflow: hidden; margin: 0; }
 .ing-strip img {

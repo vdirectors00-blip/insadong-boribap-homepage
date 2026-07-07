@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헤드라인 폰트 비교 — 인사동보리밥</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 구글폰트: 고운바탕 / 나눔명조 / 송명 / Hahmlet / Noto Serif KR -->
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Song+Myung&family=Hahmlet:wght@400;600&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- 마루부리 웹폰트 (webfontworld CDN) — 안 잡히면 로컬/폴백 -->
+<link href="https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri.css" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF0DC; --ink:#2A2724; --ink-soft:#4A453E; --seal-red:#B5382A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--ink);
+    font-family:'Pretendard Variable',Pretendard,sans-serif;
+    padding:56px clamp(20px,5vw,80px) 120px;}
+  h1.pg{font-family:'Pretendard Variable',sans-serif;font-weight:700;
+    font-size:20px;letter-spacing:.02em;margin-bottom:6px;}
+  p.desc{color:var(--ink-soft);font-size:14px;margin-bottom:40px;line-height:1.7;}
+  .card{border-top:1px solid rgba(42,39,36,.16);padding:38px 0 34px;}
+  .tag{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;}
+  .tag .no{font-family:'Nanum Myeongjo',serif;color:var(--seal-red);
+    font-size:15px;font-weight:700;letter-spacing:.1em;}
+  .tag .name{font-family:'Pretendard Variable',sans-serif;font-weight:600;
+    font-size:16px;letter-spacing:.02em;}
+  .tag .meta{font-family:'Pretendard Variable',sans-serif;font-weight:400;
+    font-size:12.5px;color:var(--ink-soft);opacity:.8;}
+  /* 실제 히어로 헤드라인 크기·행간 그대로 */
+  .headline{font-weight:400;font-size:clamp(28px,3.9vw,50px);
+    line-height:1.62;letter-spacing:.01em;}
+  .sub{font-size:clamp(20px,2.4vw,30px);line-height:1.5;margin-top:20px;
+    letter-spacing:.02em;}
+  .eyebrow{font-size:12px;letter-spacing:.4em;opacity:.7;margin-bottom:14px;}
+
+  /* 폰트별 클래스 */
+  .f-chosun  .headline,.f-chosun  .sub,.f-chosun  .eyebrow{font-family:'조선일보명조','ChosunilboNM',serif;}
+  .f-maru    .headline,.f-maru    .sub,.f-maru    .eyebrow{font-family:'MaruBuri','마루 부리','마루부리',serif;}
+  .f-gowun   .headline,.f-gowun   .sub,.f-gowun   .eyebrow{font-family:'Gowun Batang',serif;}
+  .f-nanum   .headline,.f-nanum   .sub,.f-nanum   .eyebrow{font-family:'Nanum Myeongjo',serif;}
+  .f-song    .headline,.f-song    .sub,.f-song    .eyebrow{font-family:'Song Myung',serif;}
+  .f-hahmlet .headline,.f-hahmlet .sub,.f-hahmlet .eyebrow{font-family:'Hahmlet',serif;}
+  .f-noto    .headline,.f-noto    .sub,.f-noto    .eyebrow{font-family:'Noto Serif KR',serif;font-weight:300;}
+</style>
+</head>
+<body>
+
+<h1 class="pg">헤드라인 폰트 비교 — 인사동보리밥</h1>
+<p class="desc">
+  실제 히어로 문구·크기·행간 그대로입니다. 배경은 사이트 크림색(#FAF0DC).<br>
+  가이드 요구: <b>“상페 결은 유지하되 폰트만 더 웜하게.”</b> 마음에 드는 번호를 알려주세요.
+</p>
+
+<div class="card f-chosun">
+  <div class="tag"><span class="no">현재</span><span class="name">조선일보명조</span><span class="meta">· 지금 사이트에 적용된 폰트 (기준점)</span></div>
+  <p class="eyebrow">INSADONG BORIBAP</p>
+  <p class="headline">서울 인사동 골목길,<br>화려함보다는 정겨움을 담은<br>따뜻한 밥 한 그릇</p>
+  <p class="sub">매일 직접, 정성껏</p>
+</div>
+
+<div class="card f-maru">
+  <div class="tag"><span class="no">1</span><span class="name">마루부리 (MaruBuri)</span><span class="meta">· 네이버 · 둥글고 모던한 웜 명조 · 스토리카드와 가장 근접</span></div>
+  <p class="eyebrow">INSADONG BORIBAP</p>
+  <p class="headline">서울 인사동 골목길,<br>화려함보다는 정겨움을 담은<br>따뜻한 밥 한 그릇</p>
+  <p class="sub">매일 직접, 정성껏</p>
+</div>
+
+<div class="card f-gowun">
+  <div class="tag"><span class="no">2</span><span class="name">고운바탕 (Gowun Batang)</span><span class="meta">· 따뜻하고 부드러운 붓보리미 명조</span></div>
+  <p class="eyebrow">INSADONG BORIBAP</p>
+  <p class="headline">서울 인사동 골목길,<br>화려함보다는 정겨움을 담은<br>따뜻한 밥 한 그릇</p>
+  <p class="sub">매일 직접, 정성껏</p>
+</div>
+
+<div class="card f-nanum">
+  <div class="tag"><span class="no">3</span><span class="name">나눔명조 (Nanum Myeongjo)</span><span class="meta">· 정통 · 따뜻하고 익숙한 명조</span></div>
+  <p class="eyebrow">INSADONG BORIBAP</p>
+  <p class="headline">서울 인사동 골목길,<br>화려함보다는 정겨움을 담은<br>따뜻한 밥 한 그릇</p>
+  <p class="sub">매일 직접, 정성껏</p>
+</div>
+
+<div class="card f-song">
+  <div class="tag"><span class="no">4</span><span class="name">송명 (Song Myung)</span><span class="meta">· 얇고 우아한 · 고급스럽지만 다소 차가움</span></div>
+  <p class="eyebrow">INSADONG BORIBAP</p>
+  <p class="headline">서울 인사동 골목길,<br>화려함보다는 정겨움을 담은<br>따뜻한 밥 한 그릇</p>
+  <p class="sub">매일 직접, 정성껏</p>
+</div>
+
+<div class="card f-hahmlet">
+  <div class="tag"><span class="no">5</span><span class="name">Hahmlet</span><span class="meta">· 묵직하고 존재감 있는 세리프 · 개성 강함</span></div>
+  <p class="eyebrow">INSADONG BORIBAP</p>
+  <p class="headline">서울 인사동 골목길,<br>화려함보다는 정겨움을 담은<br>따뜻한 밥 한 그릇</p>
+  <p class="sub">매일 직접, 정성껏</p>
+</div>
+
+<div class="card f-noto">
+  <div class="tag"><span class="no">6</span><span class="name">Noto Serif KR (Light)</span><span class="meta">· 중립적 · 현재 폴백 폰트 (참고용)</span></div>
+  <p class="eyebrow">INSADONG BORIBAP</p>
+  <p class="headline">서울 인사동 골목길,<br>화려함보다는 정겨움을 담은<br>따뜻한 밥 한 그릇</p>
+  <p class="sub">매일 직접, 정성껏</p>
+</div>
+
+</body>
+</html>

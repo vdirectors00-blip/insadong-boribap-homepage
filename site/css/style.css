@@ -178,6 +178,45 @@ a { color: inherit; text-decoration: none; }
 .lang-sep { width: 1px; height: 11px; background: currentColor; opacity: .4; }
 
 .site-header.on-light { color: var(--ink); }
+
+/* 햄버거 버튼 (모바일 전용) */
+.nav-toggle {
+  display: none;
+  justify-self: end;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px; height: 30px;
+  background: none; border: 0; padding: 0;
+  cursor: pointer;
+  z-index: 12;
+}
+.nav-toggle span {
+  display: block; height: 2px; width: 24px;
+  background: currentColor;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* 모바일 전체화면 메뉴 오버레이 */
+.m-nav { display: none; }
+.m-nav-lang { display: flex; align-items: center; gap: 12px; margin-top: 20px; font-family: var(--serif); font-size: 14px; letter-spacing: .14em; }
+.m-nav-lang .lang { opacity: .55; }
+.m-nav-lang .lang.active { opacity: 1; }
+
+/* 스크롤 진입 페이드업 모션 */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s cubic-bezier(.22, .61, .36, 1), transform .7s cubic-bezier(.22, .61, .36, 1);
+  will-change: opacity, transform;
+}
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
 /* 밝은 섹션에서 사진 위 네비 가독성용 스크림 */
 .site-header::before {
   content: '';
@@ -380,8 +419,8 @@ a { color: inherit; text-decoration: none; }
 /* 기와 라인 — 섹션 상단 크라운 (제목 위 delicate 장식) */
 .roofline {
   display: block;
-  width: clamp(240px, 22vw, 340px);
-  opacity: .34;
+  width: clamp(260px, 24vw, 380px);
+  opacity: .55;
   margin: 0 auto 18px;
   pointer-events: none;
 }
@@ -575,11 +614,24 @@ a { color: inherit; text-decoration: none; }
   html { scroll-snap-type: none; }           /* 모바일: 스냅 해제, 자연 스크롤 */
   .panel { min-height: auto; }
   .panel-inner { min-height: auto; padding: 96px 28px; }
-  .site-header { padding: 14px 20px; grid-template-columns: auto 1fr; }
+  .site-header { padding: 14px 20px; grid-template-columns: 1fr auto; }
   .logo-img { height: 48px; }
-  .gnb { display: none; }                    /* 모바일 v1: 로고+언어 토글만 (햄버거는 차기) */
-  .header-utils { font-size: 12px; }
+  .gnb { display: none; }
+  .header-utils { display: none; }           /* 언어 토글은 모바일 메뉴 안으로 */
+  .nav-toggle { display: flex; }
   .dot-nav { display: none; }
+  .m-nav {
+    display: flex; position: fixed; inset: 0; z-index: 9;
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 30px; background: rgba(26, 19, 13, .975);
+    opacity: 0; visibility: hidden; transition: opacity .35s ease;
+  }
+  .m-nav.open { opacity: 1; visibility: visible; }
+  .m-nav a { color: var(--white); font-family: var(--serif); font-size: 23px; letter-spacing: .1em; }
+  body.m-open { overflow: hidden; }
+  body.m-open .site-header { color: var(--white); }
+  body.m-open .logo-w { display: block; }
+  body.m-open .logo-k { display: none; }
   .split { grid-template-columns: 1fr; }
   .split-photo { min-height: 58vw; position: relative; }
   .split-photo img { position: relative; }

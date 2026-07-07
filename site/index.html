@@ -33,7 +33,24 @@
     <span class="lang-sep" aria-hidden="true"></span>
     <a class="lang" href="#" title="English — 준비중">ENG</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴" aria-expanded="false" aria-controls="mNav">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- 모바일 전체화면 메뉴 -->
+<div class="m-nav" id="mNav" aria-hidden="true">
+  <a href="#story-1">브랜드</a>
+  <a href="#table">메뉴</a>
+  <a href="#space">매장</a>
+  <a href="#invite">창업안내</a>
+  <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  <div class="m-nav-lang">
+    <a class="lang active" href="#">KOR</a>
+    <span class="lang-sep" aria-hidden="true"></span>
+    <a class="lang" href="#" title="English — 준비중">ENG</a>
+  </div>
+</div>
 
 <!-- ===== 우측 도트 네비 ===== -->
 <nav class="dot-nav" aria-label="섹션 이동">
@@ -243,7 +260,7 @@
       </p>
       <div class="place-card">
         <p class="place-name">인사동보리밥 본점</p>
-        <p class="place-addr">서울 종로구 인사동 <span class="todo">〈상세 주소 확인 예정〉</span></p>
+        <p class="place-addr">서울 종로구 관훈동 (인사동) · 종각역 도보 5분</p>
         <a class="btn-outline" href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 지도에서 보기</a>
       </div>
     </div>
@@ -305,6 +322,11 @@ sections.forEach(s => io.observe(s));
     if (li.classList.contains('active')) return;
     items.forEach(function (x) { x.classList.remove('active'); });
     li.classList.add('active');
+    // 모바일: 대표컷이 위에 있으므로 탭 시 대표컷으로 스크롤(반응이 화면에 보이게)
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      const feat = document.querySelector('.table-feature');
+      if (feat) feat.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
     img.style.opacity = 0;
     clearTimeout(t);
     t = setTimeout(function () {
@@ -316,6 +338,42 @@ sections.forEach(s => io.observe(s));
     }, 150);
   }
   items.forEach(function (li) { li.addEventListener('click', function () { select(li); }); });
+})();
+
+// 모바일 햄버거 메뉴 토글
+(function () {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('mNav');
+  if (!btn || !nav) return;
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.classList.toggle('m-open', open);
+  }
+  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+})();
+
+// 스크롤 진입 시 페이드업 (절제된 등장 모션)
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  const sel = '.chapter, .eyebrow, .h-headline, .headline, .sub-en, .sub-en-s, .body-copy, .v-head-wrap, .place-card, .feature-cap, .promise-grid, .ing-strip, .menu-list, .btn-outline';
+  document.querySelectorAll('.panel').forEach(function (panel) {
+    panel.querySelectorAll(sel).forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i * 0.07) + 's';
+    });
+  });
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 })();
 </script>
 </body>

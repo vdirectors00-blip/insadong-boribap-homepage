@@ -196,6 +196,13 @@
       <h2 class="h-headline">매일 줄 서서 먹는 밥상</h2>
       <p class="sub-en-s">The table worth lining up for.</p>
       <ul class="menu-list">
+        <li class="active" data-img="assets/img/menu-gejang.jpg" data-title="간장게장" data-desc="국내산 연평도 암꽃게로 담근 밥도둑" data-badge="SIGNATURE">
+          <img src="assets/img/menu-gejang.jpg" alt="간장게장">
+          <div class="ml-text">
+            <h4>간장게장</h4>
+            <p>국내산 연평도 암꽃게로 담근 밥도둑</p>
+          </div>
+        </li>
         <li data-img="assets/img/menu-jeyuk.jpg" data-title="보리밥 직화제육 정식" data-desc="불향 가득, 인사동 대표 보리밥 정식 차림" data-badge="대표 정식">
           <img src="assets/img/menu-jeyuk.jpg" alt="보리밥 직화제육 정식">
           <div class="ml-text">
@@ -285,33 +292,30 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.6 });
 sections.forEach(s => io.observe(s));
 
-// S6 밥상: 메뉴 항목 호버 → 왼쪽 대표컷 교체 (떠나면 게장으로 복귀)
+// S6 밥상: 메뉴 항목 클릭 → 왼쪽 대표컷 교체·고정 (기본 = 첫 항목 선택)
 (function () {
   const img = document.getElementById('featureImg');
   const ttl = document.getElementById('featureTitle');
   const dsc = document.getElementById('featureDesc');
   const bdg = document.getElementById('featureBadge');
-  const list = document.querySelector('.menu-list');
-  if (!img || !list) return;
-  const def = { img: img.getAttribute('src'), title: ttl.textContent, desc: dsc.textContent, badge: bdg.textContent };
+  const items = document.querySelectorAll('.menu-list li');
+  if (!img || !items.length) return;
   let t;
-  function paint(d) {
+  function select(li) {
+    if (li.classList.contains('active')) return;
+    items.forEach(function (x) { x.classList.remove('active'); });
+    li.classList.add('active');
     img.style.opacity = 0;
     clearTimeout(t);
     t = setTimeout(function () {
-      img.src = d.img; img.alt = d.title;
-      ttl.textContent = d.title; dsc.textContent = d.desc;
-      if (d.badge) { bdg.textContent = d.badge; bdg.style.display = ''; }
+      img.src = li.dataset.img; img.alt = li.dataset.title;
+      ttl.textContent = li.dataset.title; dsc.textContent = li.dataset.desc;
+      if (li.dataset.badge) { bdg.textContent = li.dataset.badge; bdg.style.display = ''; }
       else { bdg.style.display = 'none'; }
       img.style.opacity = 1;
     }, 150);
   }
-  list.querySelectorAll('li').forEach(function (li) {
-    li.addEventListener('mouseenter', function () {
-      paint({ img: li.dataset.img, title: li.dataset.title, desc: li.dataset.desc, badge: li.dataset.badge });
-    });
-  });
-  list.addEventListener('mouseleave', function () { paint(def); });
+  items.forEach(function (li) { li.addEventListener('click', function () { select(li); }); });
 })();
 </script>
 </body>

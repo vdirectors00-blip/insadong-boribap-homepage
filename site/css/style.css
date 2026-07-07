@@ -262,21 +262,12 @@ a { color: inherit; text-decoration: none; }
 }
 .v-rule { width: 1px; align-self: stretch; background: rgba(42, 39, 36, .5); }
 
-/* 낙관 도장 */
+/* 낙관 도장 — 스토리카드에서 추출한 진짜 전서체 인장 */
 .seal {
   margin-top: 40px;
-  width: 46px; height: 58px;
-  border: 1.5px solid var(--seal-red);
-  color: var(--seal-red);
-  font-family: var(--serif);
-  font-size: 11px;
-  line-height: 1.5;
-  letter-spacing: .18em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  writing-mode: vertical-rl;
+  width: 34px; height: 112px;
+  background: url('../assets/img/seal.png') center / contain no-repeat;
+  font-size: 0;              /* 내부 대체텍스트 숨김 */
 }
 
 /* ===== 풀스크린 사진 섹션 (S4/S7) ===== */

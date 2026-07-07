@@ -27,6 +27,7 @@ body {
   color: var(--ink);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;          /* 한글 어절 단위 줄바꿈 (중간 끊김 방지) */
 }
 
 img { display: block; max-width: 100%; }
@@ -583,14 +584,17 @@ a { color: inherit; text-decoration: none; }
   .split-photo { min-height: 58vw; position: relative; }
   .split-photo img { position: relative; }
   .split.reverse .split-photo { order: -1; }
-  .v-head-wrap { min-height: 220px; }
+  .v-head-wrap { min-height: auto; gap: 0; margin-bottom: 26px; }
+  .v-headline { writing-mode: horizontal-tb; letter-spacing: .02em; line-height: 1.35; }
+  .v-rule { display: none; }
   .table-sec { grid-template-columns: 1fr; min-height: auto; }
   .table-feature { min-height: 70vw; }
   .table-feature img { position: relative; }
   .table-list { padding: 64px 28px; }
   .feature-cap { left: 28px; bottom: 32px; }
   .promise-grid li + li::after { display: none; }
-  .promise-grid { grid-template-columns: repeat(2, 1fr); gap: 34px 20px; }
+  .promise-grid { grid-template-columns: 1fr; gap: 14px; max-width: 460px; }
+  .promise-grid li { padding: 26px 24px 24px; }
   .ingredients { min-height: 100svh; }
   .ing-copy { padding-top: 110px; }
   .ing-strip { flex-direction: column; height: auto; min-height: auto; padding: 0 20px 40px; gap: 14px; }

@@ -184,11 +184,11 @@
   <!-- ===== S6. 밥상 (좌 대표 대형 + 우 메뉴 리스트) ===== -->
   <section class="panel table-sec" id="table">
     <div class="table-feature">
-      <img src="assets/img/menu-jeyuk.jpg" alt="제육정식">
+      <img id="featureImg" src="assets/img/menu-gejang.jpg" alt="간장게장">
       <div class="feature-cap">
-        <span class="feature-badge">SIGNATURE</span>
-        <h3>제육정식</h3>
-        <p>전 세계가 반한 인사동 제육볶음</p>
+        <span class="feature-badge" id="featureBadge">SIGNATURE</span>
+        <h3 id="featureTitle">간장게장</h3>
+        <p id="featureDesc">국내산 연평도 암꽃게로 담근 밥도둑</p>
       </div>
     </div>
     <div class="table-list">
@@ -196,25 +196,25 @@
       <h2 class="h-headline">매일 줄 서서 먹는 밥상</h2>
       <p class="sub-en-s">The table worth lining up for.</p>
       <ul class="menu-list">
-        <li>
-          <img src="assets/img/menu-boribap.jpg" alt="보리밥정식">
+        <li data-img="assets/img/menu-jeyuk.jpg" data-title="보리밥 직화제육 정식" data-desc="불향 가득, 인사동 대표 보리밥 정식 차림" data-badge="대표 정식">
+          <img src="assets/img/menu-jeyuk.jpg" alt="보리밥 직화제육 정식">
           <div class="ml-text">
-            <h4>보리밥정식</h4>
-            <p>제철 나물과 비벼 먹는 기본의 맛</p>
+            <h4>보리밥 직화제육 정식</h4>
+            <p>불향 가득, 인사동 대표 보리밥 정식 차림</p>
           </div>
         </li>
-        <li>
-          <img src="assets/img/menu-bulgogi.jpg" alt="불고기정식">
+        <li data-img="assets/img/menu-yangnyeom-gejang.jpg" data-title="국내산 양념게장" data-desc="매콤달콤 중독성 강한 국내산 게장" data-badge="">
+          <img src="assets/img/menu-yangnyeom-gejang.jpg" alt="국내산 양념게장">
           <div class="ml-text">
-            <h4>불고기정식</h4>
-            <p>달지 않게, 불맛을 살린 소불고기</p>
+            <h4>국내산 양념게장</h4>
+            <p>매콤달콤 중독성 강한 국내산 게장</p>
           </div>
         </li>
-        <li>
-          <img src="assets/img/menu-bossam.jpg" alt="보쌈정식">
+        <li data-img="assets/img/menu-jukkumi.jpg" data-title="직화 주꾸미" data-desc="불향 가득 쫄깃한 직화 주꾸미" data-badge="">
+          <img src="assets/img/menu-jukkumi.jpg" alt="직화 주꾸미">
           <div class="ml-text">
-            <h4>보쌈정식</h4>
-            <p>부드럽게 삶아낸 정갈한 한 상</p>
+            <h4>직화 주꾸미</h4>
+            <p>불향 가득 쫄깃한 직화 주꾸미</p>
           </div>
         </li>
       </ul>
@@ -284,6 +284,35 @@ const io = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.6 });
 sections.forEach(s => io.observe(s));
+
+// S6 밥상: 메뉴 항목 호버 → 왼쪽 대표컷 교체 (떠나면 게장으로 복귀)
+(function () {
+  const img = document.getElementById('featureImg');
+  const ttl = document.getElementById('featureTitle');
+  const dsc = document.getElementById('featureDesc');
+  const bdg = document.getElementById('featureBadge');
+  const list = document.querySelector('.menu-list');
+  if (!img || !list) return;
+  const def = { img: img.getAttribute('src'), title: ttl.textContent, desc: dsc.textContent, badge: bdg.textContent };
+  let t;
+  function paint(d) {
+    img.style.opacity = 0;
+    clearTimeout(t);
+    t = setTimeout(function () {
+      img.src = d.img; img.alt = d.title;
+      ttl.textContent = d.title; dsc.textContent = d.desc;
+      if (d.badge) { bdg.textContent = d.badge; bdg.style.display = ''; }
+      else { bdg.style.display = 'none'; }
+      img.style.opacity = 1;
+    }, 150);
+  }
+  list.querySelectorAll('li').forEach(function (li) {
+    li.addEventListener('mouseenter', function () {
+      paint({ img: li.dataset.img, title: li.dataset.title, desc: li.dataset.desc, badge: li.dataset.badge });
+    });
+  });
+  list.addEventListener('mouseleave', function () { paint(def); });
+})();
 </script>
 </body>
 </html>

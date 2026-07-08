@@ -16,6 +16,7 @@
 <style>
   .menu-note { text-align:center; max-width:660px; margin:0 auto; font-size:16px; line-height:1.85; color:var(--ink-soft); word-break:keep-all; }
   .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.2vw,26px); }
+  .cat-grid.g4 { grid-template-columns:repeat(4,1fr); }
   .cat-card { background:var(--white); border:1px solid rgba(42,39,36,.08); border-radius:8px; overflow:hidden; box-shadow:0 14px 36px -28px rgba(40,26,14,.5); transition:transform .4s ease, box-shadow .4s ease; }
   .cat-card:hover { transform:translateY(-4px); box-shadow:0 24px 46px -26px rgba(40,26,14,.5); }
   .cat-photo { aspect-ratio:4/3; overflow:hidden; }
@@ -42,7 +43,7 @@
   .eat-step p { font-size:15px; line-height:1.7; color:var(--ink-soft); word-break:keep-all; }
   .menu-foot { text-align:center; font-size:13px; color:var(--ink-soft); opacity:.7; margin-top:36px; letter-spacing:.02em; }
   @media (max-width:900px){
-    .cat-grid { grid-template-columns:1fr 1fr; gap:12px; }
+    .cat-grid, .cat-grid.g4 { grid-template-columns:1fr 1fr; gap:12px; }
     .cat-body { padding:15px 15px 18px; }
     .cat-name { font-size:16px; }
     .eat-groups { grid-template-columns:1fr; gap:40px; }
@@ -138,7 +139,7 @@
     <p class="chapter">게장 · 곁들임</p>
     <h2 class="accent-underline">밥도둑, 그리고 별미</h2>
   </div>
-  <div class="cat-grid" style="grid-template-columns:repeat(4,1fr);">
+  <div class="cat-grid g4">
     <div class="cat-card">
       <div class="cat-photo"><img src="assets/img/big-ganjang.jpg" alt="연평도 암꽃게 간장게장"></div>
       <div class="cat-body"><div class="cat-name">연평도 간장게장</div>

@@ -414,24 +414,23 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 /* "4게의 약속" — 게 pun 강조: 위·아래 스타카토(방점) */
-.promise-title .ge {
+.promises .ge {
   position: relative;
   display: inline-block;
   color: var(--seal-red);
   margin: 0 .02em;
 }
-.promise-title .ge::before,
-.promise-title .ge::after {
+/* 스타카토 점 — "게" 위에 빨강 ···, 제목+1~4 키워드 통일 (em으로 크기 비례) */
+.promises .ge::before {
   content: '';
   position: absolute;
-  left: 50%; transform: translateX(-50%);
-  width: 5px; height: 5px;
+  left: 50%; top: -.42em;
+  transform: translateX(-50%);
+  width: .11em; height: .11em;
   border-radius: 50%;
   background: var(--seal-red);
-  box-shadow: -12px 0 var(--seal-red), 12px 0 var(--seal-red);
+  box-shadow: -.24em 0 var(--seal-red), .24em 0 var(--seal-red);
 }
-.promise-title .ge::before { top: -.34em; }
-.promise-title .ge::after { bottom: -.30em; }
 .promise-grid {
   counter-reset: promise;
   list-style: none;

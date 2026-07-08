@@ -82,6 +82,14 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(30px, 3.8vw, 50px);
   line-height: 1.48;
   margin-bottom: 28px;
+  text-wrap: balance;
+}
+
+/* 디바이스별 의도 줄바꿈: br.br-d = PC 전용(모바일 숨김), br.br-m = 모바일 전용(PC 숨김) */
+br.br-m { display: none; }
+@media (max-width: 900px) {
+  br.br-d { display: none; }
+  br.br-m { display: inline; }
 }
 .sub-en {
   font-family: var(--serif-en);
@@ -111,6 +119,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 400;
   line-height: 2.0;
   color: var(--ink-soft);
+  text-wrap: pretty;
 }
 .body-copy.wide { color: inherit; opacity: .92; }
 .body-copy.dim { opacity: .78; font-size: 14.5px; letter-spacing: .04em; }

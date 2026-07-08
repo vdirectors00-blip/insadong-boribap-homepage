@@ -10,6 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
 <!-- 헤드라인: 아리따부리 (아모레퍼시픽) — fonts-archive CDN -->
 <link href="https://cdn.jsdelivr.net/gh/fonts-archive/AritaBuri/AritaBuri.css" rel="stylesheet">
+<!-- 영문 전용 후보: 핸드크래프트 세리프 -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Spectral:wght@400;500&family=EB+Garamond:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<!-- 한자 넘버링 후보 -->
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+TC:wght@400;500;600&family=Ma+Shan+Zheng&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -68,11 +72,12 @@
 
   <!-- ===== S1. 히어로 ===== -->
   <section class="panel hero" id="hero">
-    <div class="hero-bg" role="img" aria-label="북촌 한옥 골목의 아침"></div>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true"
+           data-desktop="assets/video/hero-montage.mp4" data-mobile="assets/video/hero-montage-mobile.mp4"></video>
     <div class="panel-inner center light">
       <p class="eyebrow">INSADONG BORIBAP</p>
       <h1 class="headline">
-        서울 인사동 골목길,<br>
+        바쁜 하루에 잠시,<br>
         화려함보다는 정겨움을 담은<br>
         따뜻한 밥 한 그릇
       </h1>
@@ -89,10 +94,7 @@
     </div>
     <div class="split-copy hanji">
       <p class="chapter">이야기 하나</p>
-      <div class="v-head-wrap">
-        <h2 class="v-headline">인사동 보리밥<span class="red">,</span></h2>
-        <span class="v-rule" aria-hidden="true"></span>
-      </div>
+      <h2 class="h-headline">인사동 보리밥<span class="red">,</span></h2>
       <p class="sub-en-s">A humble bowl that warms you through.</p>
       <p class="body-copy">
         따뜻한 밥 한 그릇에 위로받을 수 있는 곳.<br>
@@ -169,30 +171,42 @@
   <!-- ===== S5. 이야기 넷 — 네 가지 약속 ===== -->
   <section class="panel promises" id="story-4">
     <div class="panel-inner center">
-      <img class="roofline" src="assets/img/deco-roofline.png" alt="" aria-hidden="true">
+      <img class="roofline" src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true">
       <p class="chapter">이야기 넷</p>
-      <h2 class="h-headline">4게의 약속</h2>
+      <h2 class="h-headline promise-title">4<span class="ge">게</span>의 약속</h2>
       <p class="sub-en-s">Four promises we keep.</p>
       <ul class="promise-grid">
-        <li data-n="01">
-          <span class="p-num">첫 번째 약속</span>
-          <h3>깐깐하게</h3>
-          <p>국내산 재료를 골라<br>매일 직접 손질합니다</p>
+        <li>
+          <div class="p-photo"><img src="assets/img/promise-1.jpg" alt="국내산 재료를 직접 손질하는 손"></div>
+          <div class="p-body">
+            <span class="p-num">첫 번째 약속</span>
+            <h3>깐깐하게</h3>
+            <p>국내산 재료를 골라<br>매일 직접 손질합니다</p>
+          </div>
         </li>
-        <li data-n="02">
-          <span class="p-num">두 번째 약속</span>
-          <h3>든든하게</h3>
-          <p>부담 없이 속이 편안한<br>한 끼를 차립니다</p>
+        <li>
+          <div class="p-photo"><img src="assets/img/promise-2.jpg" alt="푸짐한 보리밥 한 상"></div>
+          <div class="p-body">
+            <span class="p-num">두 번째 약속</span>
+            <h3>든든하게</h3>
+            <p>부담 없이 속이 편안한<br>한 끼를 차립니다</p>
+          </div>
         </li>
-        <li data-n="03">
-          <span class="p-num">세 번째 약속</span>
-          <h3>감칠맛나게</h3>
-          <p>지나치지 않은 양념으로<br>본연의 풍미를 살립니다</p>
+        <li>
+          <div class="p-photo"><img src="assets/img/promise-3.jpg" alt="붉게 무친 양념게장"></div>
+          <div class="p-body">
+            <span class="p-num">세 번째 약속</span>
+            <h3>감칠맛나게</h3>
+            <p>지나치지 않은 양념으로<br>본연의 풍미를 살립니다</p>
+          </div>
         </li>
-        <li data-n="04">
-          <span class="p-num">네 번째 약속</span>
-          <h3>불맛나게</h3>
-          <p>마지막엔 불향을 입혀<br>그 맛을 완성합니다</p>
+        <li>
+          <div class="p-photo"><img src="assets/img/promise-4.jpg" alt="불판에 지글지글 익는 고기"></div>
+          <div class="p-body">
+            <span class="p-num">네 번째 약속</span>
+            <h3>불맛나게</h3>
+            <p>마지막엔 불향을 입혀<br>그 맛을 완성합니다</p>
+          </div>
         </li>
       </ul>
     </div>
@@ -270,8 +284,8 @@
   <section class="panel invite" id="invite">
     <div class="panel-inner center light">
       <p class="chapter light">초대</p>
-      <h2 class="h-headline">이 밥상을<br>함께 차릴 분을 찾습니다</h2>
-      <p class="sub-en-s">Come set the table with us.</p>
+      <h2 class="h-headline">같은 길을<br>함께 걸어가실 분을 찾습니다</h2>
+      <p class="sub-en-s">Let's walk the same path.</p>
       <p class="body-copy wide dim">
         HACCP 인증 자체 공장 &nbsp;·&nbsp; 3無 (합성향료·감미료·착색료)<br>
         홍콩·미국 수출 &nbsp;·&nbsp; 인사동 본점에서 검증된 맛
@@ -294,6 +308,15 @@
 </footer>
 
 <script>
+// 히어로 배경 영상: 화면폭에 따라 PC 고화질(43MB)/모바일 경량(12MB) 소스 선택
+(function () {
+  const v = document.querySelector('.hero-video');
+  if (!v) return;
+  v.src = window.matchMedia('(max-width: 900px)').matches ? v.dataset.mobile : v.dataset.desktop;
+  v.load();
+  v.play().catch(function () {});
+})();
+
 // 스크롤스파이: 도트 활성화 + 밝은 섹션에서 헤더 색 반전 (애니메이션 아님, 상태 표시용)
 const sections = document.querySelectorAll('.panel');
 const dots = document.querySelectorAll('.dot-nav a');

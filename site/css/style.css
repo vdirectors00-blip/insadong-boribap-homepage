@@ -16,6 +16,8 @@
 
   /* 헤드라인: 아리따부리(아모레퍼시픽, 웹폰트) → 웜 명조 폴백 */
   --serif: 'Arita Buri', 'Maru Buri', 'Nanum Myeongjo', 'Noto Serif KR', serif;
+  --serif-en: 'Fraunces', 'Arita Buri', serif;   /* 영문 서브 전용 */
+  --serif-cjk: 'Noto Serif TC', 'Nanum Myeongjo', 'Arita Buri', serif;   /* 한자 넘버링 전용 */
   --sans:  'Pretendard Variable', Pretendard, sans-serif;
 }
 
@@ -60,8 +62,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== 타이포 ===== */
 .eyebrow {
-  font-family: var(--serif);
-  font-size: 13px;
+  font-family: var(--serif-en);
+  font-size: 15px;
   letter-spacing: .42em;
   text-indent: .42em;
   opacity: .85;
@@ -70,23 +72,23 @@ a { color: inherit; text-decoration: none; }
 .headline {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(30px, 4.2vw, 52px);
-  line-height: 1.62;
+  font-size: clamp(34px, 4.6vw, 58px);
+  line-height: 1.55;
   text-wrap: balance;
 }
 .h-headline {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: clamp(26px, 3.4vw, 44px);
-  line-height: 1.5;
+  font-size: clamp(30px, 3.8vw, 50px);
+  line-height: 1.48;
   margin-bottom: 28px;
 }
 .sub-en {
-  font-family: var(--serif);
-  font-size: 15px;
-  letter-spacing: .12em;
-  opacity: .8;
-  margin: 26px 0 44px;
+  font-family: var(--serif-en);
+  font-size: 22px;
+  letter-spacing: .06em;
+  opacity: .82;
+  margin: 22px 0 44px;
 }
 .chapter {
   font-family: var(--serif);
@@ -98,16 +100,16 @@ a { color: inherit; text-decoration: none; }
 }
 .chapter.light { color: var(--white); opacity: .75; }
 .sub-en-s {
-  font-family: var(--serif);
-  font-size: 12px;
-  letter-spacing: .22em;
-  opacity: .5;
-  margin: -14px 0 28px;
+  font-family: var(--serif-en);
+  font-size: 19px;
+  letter-spacing: .06em;
+  opacity: .6;
+  margin: -6px 0 30px;
 }
 .body-copy {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 2.05;
+  line-height: 2.0;
   color: var(--ink-soft);
 }
 .body-copy.wide { color: inherit; opacity: .92; }
@@ -247,15 +249,19 @@ a { color: inherit; text-decoration: none; }
 }
 .dot-nav a.active { background: var(--seal-red); transform: scale(1.35); }
 
-/* ===== S1. 히어로 ===== */
-.hero-bg {
+/* ===== S1. 히어로 (배경 영상) ===== */
+.hero-video {
   position: absolute; inset: 0;
-  background: url('../assets/img/hero-bukchon.jpg') center / cover no-repeat;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
-.hero-bg::after {
+.hero::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(rgba(20, 15, 10, .38), rgba(20, 15, 10, .30) 55%, rgba(20, 15, 10, .52));
+  z-index: 1;
+  background: linear-gradient(rgba(20, 15, 10, .40), rgba(20, 15, 10, .28) 50%, rgba(20, 15, 10, .50));
+  pointer-events: none;
 }
 .scroll-hint {
   position: absolute; left: 50%; bottom: 34px; z-index: 2;
@@ -284,23 +290,6 @@ a { color: inherit; text-decoration: none; }
 /* 상세페이지·스토리카드와 동일한 매끈한 크림면 (텍스처 없음) */
 .split-copy.hanji { background: var(--cream); }
 
-/* 세로쓰기 헤드라인 (S2 전용 — 스토리 카드 시그니처) */
-.v-head-wrap {
-  display: flex;
-  gap: 26px;
-  align-items: flex-start;
-  margin-bottom: 34px;
-  min-height: 300px;
-}
-.v-headline {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: clamp(30px, 3vw, 42px);
-  line-height: 1.3;
-  writing-mode: vertical-rl;
-  letter-spacing: .28em;
-}
-.v-rule { width: 1px; align-self: stretch; background: rgba(42, 39, 36, .5); }
 
 /* 낙관 도장 — 스토리카드에서 추출한 진짜 전서체 인장 */
 .seal {
@@ -419,74 +408,94 @@ a { color: inherit; text-decoration: none; }
 /* 기와 라인 — 섹션 상단 크라운 (제목 위 delicate 장식) */
 .roofline {
   display: block;
-  width: clamp(260px, 24vw, 380px);
-  opacity: .55;
-  margin: 0 auto 18px;
+  width: clamp(420px, 48vw, 720px);
+  opacity: .85;
+  margin: 0 auto 30px;
   pointer-events: none;
 }
+/* "4게의 약속" — 게 pun 강조: 위·아래 스타카토(방점) */
+.promise-title .ge {
+  position: relative;
+  display: inline-block;
+  color: var(--seal-red);
+  margin: 0 .02em;
+}
+.promise-title .ge::before,
+.promise-title .ge::after {
+  content: '';
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--seal-red);
+  box-shadow: -12px 0 var(--seal-red), 12px 0 var(--seal-red);
+}
+.promise-title .ge::before { top: -.34em; }
+.promise-title .ge::after { bottom: -.30em; }
 .promise-grid {
   counter-reset: promise;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  margin-top: 22px;
+  gap: 26px;
+  margin-top: 26px;
   width: 100%;
-  max-width: 980px;
+  max-width: 1140px;
 }
 .promise-grid li {
-  counter-increment: promise;
   position: relative;
+  overflow: hidden;
   text-align: center;
-  padding: 28px 36px 26px;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .55);
   border: 1px solid rgba(42, 39, 36, .09);
-  border-radius: 8px;
-  box-shadow: 0 14px 34px -26px rgba(40, 26, 14, .5);
+  border-radius: 10px;
+  box-shadow: 0 16px 38px -26px rgba(40, 26, 14, .5);
   transition: transform .4s ease, box-shadow .4s ease;
 }
 .promise-grid li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 44px -24px rgba(40, 26, 14, .55);
+  transform: translateY(-5px);
+  box-shadow: 0 26px 50px -24px rgba(40, 26, 14, .55);
 }
-/* [N1] 넘버링 — 한자 숫자 (一 二 三 四) */
-.promise-grid li::before {
-  content: counter(promise, cjk-ideographic);
-  display: block;
-  font-family: var(--serif);
-  font-size: 34px;
-  line-height: 1;
-  color: var(--seal-red);
-  margin-bottom: 16px;
+/* 카드 사진 — 상단, 호버 시 켄번즈(느린 확대) */
+.p-photo {
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
 }
+.p-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+.promise-grid li:hover .p-photo img { transform: scale(1.06); }
+.p-body { padding: 30px 34px 34px; }
 .p-num {
   display: block;
   font-family: var(--serif);
-  font-size: 11.5px;
-  letter-spacing: .2em;
-  color: var(--ink-soft);
-  opacity: .55;
-  margin-bottom: 10px;
+  font-size: 13px;
+  letter-spacing: .22em;
+  color: var(--seal-red);
+  opacity: .78;
+  margin-bottom: 12px;
 }
 .promise-grid h3 {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 23px;
+  font-size: 27px;
   letter-spacing: .1em;
   margin-bottom: 14px;
 }
 .promise-grid h3::after {
   content: '';
   display: block;
-  width: 24px; height: 2px;
-  margin: 12px auto 0;
+  width: 28px; height: 2px;
+  margin: 14px auto 0;
   background: var(--seal-red);
   opacity: .55;
 }
 .promise-grid p {
-  font-size: 14.5px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.9;
+  line-height: 1.95;
   color: var(--ink-soft);
 }
 
@@ -636,9 +645,6 @@ a { color: inherit; text-decoration: none; }
   .split-photo { min-height: 58vw; position: relative; }
   .split-photo img { position: relative; }
   .split.reverse .split-photo { order: -1; }
-  .v-head-wrap { min-height: auto; gap: 0; margin-bottom: 26px; }
-  .v-headline { writing-mode: horizontal-tb; letter-spacing: .02em; line-height: 1.35; }
-  .v-rule { display: none; }
   .table-sec { grid-template-columns: 1fr; min-height: auto; }
   .table-feature { min-height: 70vw; }
   .table-feature img { position: relative; }

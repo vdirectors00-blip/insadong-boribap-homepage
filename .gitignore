@@ -3,6 +3,7 @@
 참고자료/
 *.ai
 *.mp4
+!site/assets/video/*.mp4      # hero 배경 영상은 배포에 포함
 *.pdf
 *.zip
 디자인가이드/*.jpg

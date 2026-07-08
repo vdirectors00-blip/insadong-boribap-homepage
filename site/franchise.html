@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<header class="site-header on-light" id="siteHeader">
+<header class="site-header" id="siteHeader">
   <a class="logo" href="index.html" aria-label="인사동보리밥">
     <img class="logo-img logo-w" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
     <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
@@ -51,12 +51,13 @@
   </div>
 </div>
 
-<!-- ===== 히어로 (크림) ===== -->
-<section class="page-hero">
-  <img class="roofline" src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true">
-  <p class="chapter">FRANCHISE</p>
-  <h1>같은 길을<br class="br-m"> 함께 걸어가실 분을 찾습니다</h1>
-  <p class="sub-en">Let's walk the same path.</p>
+<!-- ===== 상단 배너 (한옥 거리) ===== -->
+<section class="top-banner">
+  <img src="assets/img/hanok-2.jpg" alt="인사동 한옥 거리">
+  <div class="tb-inner">
+    <span class="en">FRANCHISE</span>
+    <h1>같은 길을 함께<br class="br-m"> 걸어가실 분을 찾습니다</h1>
+  </div>
 </section>
 
 <!-- ===== 짧은 소개 + 문의 폼 (원페이지) ===== -->
@@ -91,6 +92,9 @@
 
 <script>
 (function () {
+  var h=document.getElementById('siteHeader');
+  function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.46); }
+  window.addEventListener('scroll', sc, {passive:true}); sc();
   var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
   if(!btn||!nav) return;
   function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }

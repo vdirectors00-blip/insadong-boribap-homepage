@@ -220,6 +220,64 @@ html { scroll-snap-type: none; }
 .mfg-band img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 220px; }
 .mfg-band figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 18px; color: var(--white); font-size: 13.5px; letter-spacing: .03em; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.66)); }
 
+/* ==========================================================
+   육대장式 구조적 콘텐츠 (랜딩끼 제거 · 콘텐츠 즉시 노출)
+   ========================================================== */
+/* 상단 배너 (풀스크린 아님, 40~52vh) */
+.top-banner { position: relative; width: 100%; height: 52vh; min-height: 360px; max-height: 560px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.top-banner > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.top-banner::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(24,16,10,.34), rgba(24,16,10,.46)); }
+.top-banner .tb-inner { position: relative; z-index: 2; text-align: center; color: var(--white); padding: 0 24px; }
+.top-banner .en { font-family: var(--serif-en); font-size: clamp(12px,1.3vw,15px); letter-spacing: .34em; text-indent: .34em; opacity: .9; display: block; margin-bottom: 16px; }
+.top-banner h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(30px,4.4vw,52px); line-height: 1.35; text-shadow: 0 2px 24px rgba(0,0,0,.4); text-wrap: balance; }
+
+/* 타이틀 헤더 (사진 없는 페이지용, 낙관/프레임) */
+.title-head { text-align: center; padding: clamp(120px,15vw,180px) 24px clamp(40px,5vw,64px); background: var(--cream); }
+.title-head .en { font-family: var(--serif-en); font-size: 14px; letter-spacing: .3em; text-indent: .3em; color: var(--seal-red); opacity: .85; display: block; margin-bottom: 20px; }
+.title-head h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(28px,3.8vw,46px); line-height: 1.4; color: var(--ink); text-wrap: balance; }
+
+/* 콘텐츠 블록 (텍스트 + 사진 교차) */
+.cblock { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(28px,4.5vw,68px); max-width: 1160px; margin: 0 auto; padding: clamp(52px,7vw,96px) clamp(24px,5vw,56px); }
+.cblock.reverse .cblock-text { order: 2; }
+.cblock-text .en { font-family: var(--serif-en); font-size: 13px; letter-spacing: .26em; color: var(--seal-red); opacity: .85; display: block; margin-bottom: 16px; }
+.cblock-text h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(24px,2.9vw,36px); line-height: 1.45; color: var(--ink); text-wrap: balance; }
+.cblock-text .lead { margin-top: 22px; font-size: 16px; line-height: 1.95; color: var(--ink-soft); word-break: keep-all; }
+.cblock-text .seal { margin-top: 30px; }
+.cblock-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; box-shadow: 0 20px 46px -30px rgba(40,26,14,.5); }
+
+/* 지붕라인 divider */
+.roof-div { text-align: center; padding: clamp(24px,4vw,48px) 24px; }
+.roof-div img { width: clamp(280px,38vw,520px); opacity: .72; }
+
+/* 특징 아이콘 행 */
+.feat-row { display: flex; justify-content: center; gap: clamp(16px,3.5vw,58px); flex-wrap: wrap; max-width: 1040px; margin: 0 auto; padding: clamp(40px,6vw,72px) 24px; }
+.feat-item { text-align: center; max-width: 150px; }
+.feat-item .svg-icon { width: 38px; height: 38px; stroke: var(--seal-red); stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; margin: 0 auto 14px; display: block; }
+.feat-item h4 { font-family: var(--serif); font-weight: 700; font-size: 15px; line-height: 1.5; color: var(--ink); letter-spacing: .02em; word-break: keep-all; }
+
+/* 메뉴 카탈로그 그리드 (가격 없음) */
+.mcat { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(18px,2.4vw,32px) clamp(16px,2vw,26px); max-width: 1160px; margin: 0 auto; }
+.mcat-item { text-align: center; flex: 0 0 240px; max-width: 240px; }
+.mcat-photo { aspect-ratio: 1/1; border-radius: 10px; overflow: hidden; box-shadow: 0 14px 34px -26px rgba(40,26,14,.5); }
+.mcat-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+.mcat-item:hover .mcat-photo img { transform: scale(1.06); }
+.mcat-name { font-family: var(--serif); font-weight: 700; font-size: 17px; color: var(--ink); margin-top: 16px; letter-spacing: .02em; }
+.mcat-badge { display: inline-block; font-family: var(--serif); font-size: 11px; letter-spacing: .1em; color: var(--seal-red); border: 1px solid rgba(181,56,42,.4); border-radius: 3px; padding: 1px 7px; margin-left: 6px; vertical-align: middle; }
+.mcat-desc { font-size: 13px; line-height: 1.65; color: var(--ink-soft); margin-top: 8px; word-break: keep-all; padding: 0 6px; }
+.cat-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 0 auto clamp(36px,5vw,56px); }
+.cat-tabs button, .cat-tabs a { font-family: var(--serif); font-size: 15px; color: var(--ink-soft); background: none; border: 1px solid rgba(42,39,36,.2); border-radius: 30px; padding: 9px 24px; cursor: pointer; letter-spacing: .04em; }
+.cat-tabs .on { background: var(--seal-red); color: var(--white); border-color: var(--seal-red); }
+
+@media (max-width: 900px) {
+  .top-banner { height: 42vh; min-height: 300px; }
+  .cblock { grid-template-columns: 1fr; gap: 24px; padding: 56px 22px; }
+  .cblock.reverse .cblock-text { order: 0; }
+  .cblock-photo { order: -1; }
+  .mcat-item { flex: 0 0 44%; max-width: 44%; }
+  .feat-row { gap: 24px 14px; }
+  .feat-item { max-width: 130px; }
+}
+
 /* ===== 복순도가式 풀블리드 사진 섹션 ===== */
 .fb { position: relative; width: 100%; height: 100vh; height: 100svh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .fb > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }

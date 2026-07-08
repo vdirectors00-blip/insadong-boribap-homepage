@@ -17,15 +17,15 @@
   .map-wrap { position:relative; width:100%; max-width:960px; margin:0 auto; aspect-ratio:16/9; border-radius:8px; overflow:hidden; border:1px solid rgba(42,39,36,.12); box-shadow:0 18px 44px -30px rgba(40,26,14,.5); }
   .map-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
   .map-actions { text-align:center; margin-top:26px; }
-  .info-dl { max-width:680px; margin:clamp(44px,6vw,72px) auto 0; }
+  .info-dl { max-width:680px; margin:clamp(40px,6vw,64px) auto 0; }
   .info-row { display:flex; align-items:flex-start; gap:18px; padding:22px 4px; border-top:1px solid rgba(42,39,36,.13); }
   .info-row:last-child { border-bottom:1px solid rgba(42,39,36,.13); }
-  .info-row .svg-icon { width:24px; height:24px; margin:2px 0 0; flex-shrink:0; opacity:.85; }
+  .info-row .svg-icon { width:24px; height:24px; margin:2px 0 0; flex-shrink:0; opacity:.85; stroke:var(--ink); stroke-width:1.5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
   .info-row .k { font-family:var(--serif); font-size:15px; letter-spacing:.06em; color:var(--seal-red); opacity:.9; min-width:78px; }
   .info-row .v { font-size:16px; line-height:1.7; color:var(--ink); word-break:keep-all; }
   .info-row .v small { display:block; font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
-  .directions { max-width:680px; margin:clamp(30px,4vw,44px) auto 0; display:flex; align-items:center; gap:14px; justify-content:center; text-align:center; }
-  .directions .svg-icon { width:26px; height:26px; margin:0; }
+  .directions { max-width:680px; margin:clamp(28px,4vw,40px) auto 0; display:flex; align-items:center; gap:14px; justify-content:center; text-align:center; }
+  .directions .svg-icon { width:26px; height:26px; stroke:var(--ink); stroke-width:1.5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
   .directions p { font-size:15.5px; line-height:1.7; color:var(--ink-soft); word-break:keep-all; }
   @media (max-width:900px){ .info-row .k { min-width:64px; } }
 </style>
@@ -53,38 +53,39 @@
   <div class="m-nav-lang"><a class="lang active" href="#">KOR</a><span class="lang-sep" aria-hidden="true"></span><a class="lang" href="#" title="English 준비중">ENG</a></div>
 </div>
 
-<!-- ===== 히어로 (한옥) ===== -->
-<section class="fb">
-  <img src="assets/img/hero-store.jpg" alt="인사동 한옥 골목">
-  <div class="fb-inner">
+<!-- ===== 상단 배너 (매장 한옥) ===== -->
+<section class="top-banner">
+  <img src="assets/img/store-hero.jpg" alt="인사동 한옥 골목">
+  <div class="tb-inner">
     <span class="en">STORE</span>
-    <h2>인사동 7길,<br> 지하 한 켠</h2>
-    <span class="loc">Insadong 7-gil, Seoul</span>
+    <h1>인사동 7길, 지하 한 켠</h1>
   </div>
 </section>
 
-<!-- ===== 공간 (풀블리드) ===== -->
-<section class="fb">
-  <img src="assets/img/serving.jpg" alt="매장에 오르는 정갈한 상차림">
-  <div class="fb-inner">
-    <span class="en">SPACE</span>
-    <h2>인사동 골목의<br> 한 자리</h2>
-    <p class="cap">화려함보다는 정겨움을 담은 공간입니다. 따뜻한 밥 한 그릇에 잠시 쉬어가시길 바랍니다.</p>
+<!-- ===== 블록 1: 공간 ===== -->
+<div class="cblock">
+  <div class="cblock-text">
+    <span class="en">THE SPACE</span>
+    <h2>골목 안, 정겨운 한 자리</h2>
+    <p class="lead">화려함보다는 정겨움을 담은 공간입니다. 인사동 골목 지하 한 켠, 매일 줄 서서 드시는 정갈한 한 상을 차려냅니다. 바쁜 하루에 잠시 쉬어가시길 바랍니다.</p>
   </div>
-</section>
+  <div class="cblock-photo"><img src="assets/img/serving.jpg" alt="매장에 오르는 정갈한 상차림"></div>
+</div>
 
-<!-- ===== 인증 · 제조 (풀블리드) ===== -->
-<section class="fb">
-  <img src="assets/img/factory-1.jpg" alt="HACCP 인증 위생 시설">
-  <div class="fb-inner">
+<!-- ===== 블록 2: 제조/인증 ===== -->
+<div class="cblock reverse">
+  <div class="cblock-text">
     <span class="en">MANUFACTURING</span>
-    <h2>HACCP 인증<br> 제조사가 만듭니다</h2>
-    <p class="cap">제조 전문 회사 그래이츠의 HACCP 인증 자체 공장에서, 철저한 위생 관리로 안전한 한 끼를 지킵니다.</p>
+    <h2>HACCP 인증<br class="br-d"> 제조사가 만듭니다</h2>
+    <p class="lead">매장에 오르는 게장과 양념은 제조 전문 회사 그래이츠의 HACCP 인증 자체 공장에서 만들어집니다. 철저한 위생 관리와 표준화된 공정으로, 매장에서도 늘 같은 맛을 지킵니다.</p>
   </div>
-</section>
+  <div class="cblock-photo"><img src="assets/img/factory-1.jpg" alt="HACCP 인증 위생 시설"></div>
+</div>
+
+<div class="roof-div"><img src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true"></div>
 
 <!-- ===== 지도 · 매장 정보 ===== -->
-<section class="page-section">
+<section class="page-section" style="padding-top:0;">
   <div class="section-head">
     <p class="chapter">MAP</p>
     <h2 class="accent-underline">오시는 길</h2>
@@ -120,13 +121,11 @@
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="fb short">
-  <img src="assets/img/hanok-2.jpg" alt="인사동 한옥 거리">
-  <div class="fb-inner">
-    <span class="en">VISIT</span>
-    <h2>미리 연락 주시면<br> 편하게 준비해 드립니다</h2>
-    <a class="btn-outline" href="tel:0507-1327-6086" style="margin-top:34px;">전화로 문의하기</a>
-  </div>
+<section class="cta-band">
+  <p class="chapter">VISIT</p>
+  <h2>미리 연락 주시면<br class="br-m"> 편하게 준비해 드립니다</h2>
+  <a class="btn-outline dark" href="tel:0507-1327-6086">전화로 문의하기</a>
+  <span class="seal" aria-hidden="true"></span>
 </section>
 
 <footer class="site-footer">
@@ -138,8 +137,8 @@
 <script>
 (function () {
   var h=document.getElementById('siteHeader');
-  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.7); }
-  window.addEventListener('scroll', s, {passive:true}); s();
+  function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.46); }
+  window.addEventListener('scroll', sc, {passive:true}); sc();
   var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
   function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }
   btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });

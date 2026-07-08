@@ -413,7 +413,7 @@ br.br-m { display: none; }
 
 /* ===== S5. 네 가지 약속 — [B] 2×2 카드 + [N1] 한자 넘버링 ===== */
 .promises { background: linear-gradient(180deg, var(--cream) 0%, var(--hanji) 100%); }
-.promises .panel-inner { position: relative; padding-top: clamp(64px, 8svh, 92px); padding-bottom: clamp(22px, 3.4svh, 44px); }
+.promises .panel-inner { position: relative; padding-top: clamp(56px, 7svh, 88px); padding-bottom: clamp(40px, 5.5svh, 64px); }
 .promise-title { margin-bottom: clamp(10px, 1.6svh, 22px); }
 /* 기와 라인 — 섹션 상단 크라운 (제목 위 delicate 장식) */
 .roofline {
@@ -456,7 +456,7 @@ br.br-m { display: none; }
 }
 /* 카드 사진 — 상단 세로형, 높이는 화면 높이에 비례(svh)해 어떤 스크린에도 한 화면에 맞게 */
 .p-photo {
-  height: clamp(140px, 21svh, 292px);
+  height: clamp(136px, 19svh, 280px);
   overflow: hidden;
 }
 .p-photo img {
@@ -545,15 +545,15 @@ br.br-m { display: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 74px clamp(48px, 6vw, 92px);
+  padding: clamp(48px, 7svh, 74px) clamp(48px, 6vw, 92px);
 }
-.menu-list { list-style: none; margin: 26px 0 4px; }
+.menu-list { list-style: none; margin: clamp(16px, 2.4svh, 26px) 0 4px; }
 .menu-list li {
   position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 14px 12px 14px 14px;
+  padding: clamp(10px, 1.4svh, 14px) 12px clamp(10px, 1.4svh, 14px) 14px;
   border-top: 1px solid rgba(42, 39, 36, .13);
   cursor: pointer;
   transition: background .3s ease, padding-left .3s ease, box-shadow .3s ease;
@@ -569,7 +569,7 @@ br.br-m { display: none; }
 .menu-list li.active h4 { color: var(--seal-red); }
 .menu-list h4 { transition: color .3s ease; }
 .menu-list img {
-  width: 74px; height: 74px;
+  width: clamp(60px, 8.4svh, 74px); height: clamp(60px, 8.4svh, 74px);
   object-fit: cover;
   border-radius: 2px;
   flex-shrink: 0;
@@ -582,7 +582,7 @@ br.br-m { display: none; }
   margin-bottom: 6px;
 }
 .menu-list .ml-text p { font-size: 14px; font-weight: 400; color: var(--ink-soft); }
-.btn-outline.slim { align-self: flex-start; margin-top: 34px; padding: 13px 34px; }
+.btn-outline.slim { align-self: flex-start; margin-top: clamp(20px, 2.8svh, 34px); padding: 13px 34px; }
 
 /* ===== S7. 공간 ===== */
 .place-card { margin-top: 40px; }

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소식 · 인사동보리밥</title>
+<meta name="description" content="인사동보리밥의 공지와 이벤트, 온라인몰 소식을 전합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/fonts-archive/AritaBuri/AritaBuri.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+<style>
+  /* ===== news.html 전용 ===== */
+  .notice-list { max-width:760px; margin:0 auto; }
+  .notice { display:flex; align-items:center; gap:20px; padding:26px 6px; border-top:1px solid rgba(42,39,36,.13); }
+  .notice:last-child { border-bottom:1px solid rgba(42,39,36,.13); }
+  .notice .n-date { font-family:var(--serif-en); font-size:14px; letter-spacing:.05em; color:var(--ink-soft); opacity:.7; min-width:96px; }
+  .notice .n-body h3 { font-family:var(--serif); font-weight:700; font-size:18px; color:var(--ink); margin-bottom:6px; }
+  .notice .n-body p { font-size:14.5px; line-height:1.7; color:var(--ink-soft); word-break:keep-all; }
+  .notice .n-tag { margin-left:auto; font-family:var(--serif); font-size:12px; letter-spacing:.14em; color:var(--seal-red); opacity:.85; white-space:nowrap; }
+  /* 온라인몰 배너 */
+  .shop-banner { max-width:960px; margin:0 auto; background:linear-gradient(180deg,var(--hanji),var(--cream)); border:1px solid rgba(42,39,36,.1); border-radius:10px; padding:clamp(40px,6vw,64px) 28px; text-align:center; }
+  .shop-banner .svg-icon { width:36px; height:36px; margin:0 auto 20px; }
+  .shop-banner h2 { font-family:var(--serif); font-weight:700; font-size:clamp(22px,3vw,32px); color:var(--ink); margin-bottom:14px; text-wrap:balance; }
+  .shop-banner p { font-size:15.5px; line-height:1.8; color:var(--ink-soft); max-width:520px; margin:0 auto 30px; word-break:keep-all; }
+  /* 인스타 */
+  .insta { text-align:center; }
+  .insta a { display:inline-flex; align-items:center; gap:12px; font-family:var(--serif); font-size:18px; letter-spacing:.05em; color:var(--ink); }
+  .insta a:hover { color:var(--seal-red); }
+  .insta .svg-icon { width:26px; height:26px; margin:0; }
+  @media (max-width:900px){
+    .notice { flex-wrap:wrap; gap:8px 16px; }
+    .notice .n-date { min-width:auto; order:1; }
+    .notice .n-tag { order:2; margin-left:0; }
+    .notice .n-body { order:3; flex-basis:100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header on-light" id="siteHeader">
+  <a class="logo" href="index.html" aria-label="인사동보리밥">
+    <img class="logo-img logo-w" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
+    <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
+  </a>
+  <nav class="gnb" aria-label="주 메뉴">
+    <a href="brand.html">브랜드</a>
+    <a href="menu.html">메뉴</a>
+    <a href="store.html">매장</a>
+    <a href="franchise.html">창업안내</a>
+    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  </nav>
+  <div class="header-utils">
+    <a class="lang active" href="#" aria-current="true">KOR</a>
+    <span class="lang-sep" aria-hidden="true"></span>
+    <a class="lang" href="#" title="English 준비중">ENG</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴" aria-expanded="false" aria-controls="mNav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="m-nav" id="mNav" aria-hidden="true">
+  <a href="brand.html">브랜드</a>
+  <a href="menu.html">메뉴</a>
+  <a href="store.html">매장</a>
+  <a href="franchise.html">창업안내</a>
+  <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  <div class="m-nav-lang">
+    <a class="lang active" href="#">KOR</a>
+    <span class="lang-sep" aria-hidden="true"></span>
+    <a class="lang" href="#" title="English 준비중">ENG</a>
+  </div>
+</div>
+
+<!-- ===== 히어로 ===== -->
+<section class="page-hero">
+  <img class="roofline" src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true">
+  <p class="chapter">NEWS</p>
+  <h1>소식</h1>
+  <p class="sub-en">What's new.</p>
+</section>
+
+<!-- ===== 공지·이벤트 ===== -->
+<section class="page-section">
+  <div class="section-head">
+    <p class="chapter">NOTICE</p>
+    <h2 class="accent-underline">공지 · 이벤트</h2>
+  </div>
+  <div class="notice-list">
+    <div class="notice" data-todo="실제 공지 등록 시 교체">
+      <span class="n-date">준비 중</span>
+      <div class="n-body"><h3>공지사항을 준비하고 있습니다</h3><p>매장 소식과 운영 안내를 이곳에서 전해 드리겠습니다.</p></div>
+      <span class="n-tag">공지</span>
+    </div>
+    <div class="notice" data-todo="실제 이벤트 등록 시 교체">
+      <span class="n-date">준비 중</span>
+      <div class="n-body"><h3>이벤트 소식을 준비하고 있습니다</h3><p>계절 메뉴와 온라인몰 이벤트를 이곳에서 안내해 드리겠습니다.</p></div>
+      <span class="n-tag">이벤트</span>
+    </div>
+  </div>
+</section>
+
+<hr class="rule-hairline">
+
+<!-- ===== 온라인몰 ===== -->
+<section class="page-section">
+  <div class="shop-banner">
+    <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    <h2>매장의 한 상을<br class="br-m"> 온라인에서</h2>
+    <p>인사동보리밥의 게장과 정식을 네이버 스마트스토어에서 만나보실 수 있습니다.</p>
+    <a class="btn-outline dark" href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">온라인으로 만나기</a>
+  </div>
+</section>
+
+<!-- ===== 인스타그램 ===== -->
+<section class="page-section insta" data-todo="추후 인스타 피드 임베드 검토">
+  <div class="section-head">
+    <p class="chapter">INSTAGRAM</p>
+    <h2 class="accent-underline">일상은 인스타그램에서</h2>
+  </div>
+  <a href="https://www.instagram.com/hiboribab/" target="_blank" rel="noopener">
+    <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+    @hiboribab
+  </a>
+  <span class="seal" aria-hidden="true" style="display:block; margin:36px auto 0;"></span>
+</section>
+
+<footer class="site-footer">
+  <img class="f-logo-img" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
+  <p class="f-info">
+    주식회사 그래이츠 &nbsp;|&nbsp;
+    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">네이버 스마트스토어</a> &nbsp;|&nbsp;
+    <a href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 플레이스</a>
+  </p>
+  <p class="f-copy">© 2026 GREATS. All rights reserved.</p>
+</footer>
+
+<script>
+(function () {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('mNav');
+  if (!btn || !nav) return;
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.classList.toggle('m-open', open);
+  }
+  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+})();
+</script>
+</body>
+</html>

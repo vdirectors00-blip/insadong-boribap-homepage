@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>브랜드 · 인사동보리밥</title>
+<meta name="description" content="정성과 시간으로 담아낸 정갈한 한 끼. 제조 전문 회사 그래이츠가 직접 차리는 한식 브랜드, 인사동보리밥의 이야기와 재료, 신뢰의 근거를 소개합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/fonts-archive/AritaBuri/AritaBuri.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+<style>
+  /* ===== brand.html 전용 (style.css·pages.css 미수정, 여기서만) ===== */
+
+  /* 브랜드 스토리 — 좌 사진 / 우 크림 카피 (style.css .split 재사용, 좌측정렬 헤딩) */
+  .brand-story .split-copy { text-align: left; }
+  .brand-story .chapter { margin-bottom: 18px; }
+  .brand-story h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(24px, 3.2vw, 36px);
+    line-height: 1.45;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .brand-story .accent-underline::after { margin: 22px 0 0; }   /* 좌측정렬 구분선 */
+  .brand-story .body-copy { margin-top: 24px; font-size: 17px; line-height: 1.95; }
+  .brand-story .body-copy + .body-copy { margin-top: 18px; }
+  .brand-story .seal { margin-top: 40px; }
+
+  /* 대표 인사말 — 중앙 서명 블록 (자료 대기, placeholder) */
+  .greeting { text-align: center; }
+  .greeting-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .greeting .chapter { margin-bottom: 24px; }
+  .greeting-quote {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(20px, 2.6vw, 30px);
+    line-height: 1.85;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .greeting-sign {
+    margin-top: 26px;
+    font-family: var(--serif);
+    font-size: 16px;
+    letter-spacing: .1em;
+    color: var(--ink-soft);
+  }
+  .greeting .seal { margin-top: 32px; }
+
+  /* 재료의 진심 — 메인 S4 .ing-strip 오프셋 에디토리얼 재사용 */
+  .ingredients-sec {
+    background: linear-gradient(180deg, var(--hanji) 0%, var(--cream) 100%);
+    padding: clamp(64px, 8vw, 104px) 0 clamp(80px, 9vw, 124px);
+  }
+  .ingredients-sec .section-head {
+    padding: 0 24px;
+    margin-bottom: clamp(28px, 4vw, 46px);
+  }
+
+  /* 신뢰 지표 — pages.css .support-grid 를 5열로 (아이콘 + 짧은 팩트) */
+  .trust-grid {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1120px;
+    gap: clamp(18px, 2.4vw, 34px);
+  }
+  @media (max-width: 900px) {
+    .trust-grid { grid-template-columns: 1fr 1fr; gap: 34px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 헤더 (style.css 재사용, 하위는 on-light 고정) ===== -->
+<header class="site-header on-light" id="siteHeader">
+  <a class="logo" href="index.html" aria-label="인사동보리밥">
+    <img class="logo-img logo-w" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
+    <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
+  </a>
+  <nav class="gnb" aria-label="주 메뉴">
+    <a href="brand.html" aria-current="page">브랜드</a>
+    <a href="menu.html">메뉴</a>
+    <a href="store.html">매장</a>
+    <a href="franchise.html">창업안내</a>
+    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  </nav>
+  <div class="header-utils">
+    <a class="lang active" href="#" aria-current="true">KOR</a>
+    <span class="lang-sep" aria-hidden="true"></span>
+    <a class="lang" href="#" title="English — 준비중">ENG</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴" aria-expanded="false" aria-controls="mNav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="m-nav" id="mNav" aria-hidden="true">
+  <a href="brand.html">브랜드</a>
+  <a href="menu.html">메뉴</a>
+  <a href="store.html">매장</a>
+  <a href="franchise.html">창업안내</a>
+  <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  <div class="m-nav-lang">
+    <a class="lang active" href="#">KOR</a>
+    <span class="lang-sep" aria-hidden="true"></span>
+    <a class="lang" href="#" title="English — 준비중">ENG</a>
+  </div>
+</div>
+
+<!-- ===== 페이지 히어로 ===== -->
+<section class="page-hero">
+  <img class="roofline" src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true">
+  <p class="chapter">BRAND</p>
+  <h1>정성과 시간으로 담아낸<br class="br-m"> 정갈한 한 끼</h1>
+  <p class="sub-en">Crafted with time and care.</p>
+</section>
+
+<!-- ===== 브랜드 스토리 (좌 사진 / 우 크림 카피, 낙관 마무리) ===== -->
+<section class="split brand-story">
+  <div class="split-photo"><img src="assets/img/story-boribap.jpg" alt="정갈하게 차려낸 보리밥 한 상"></div>
+  <div class="split-copy hanji">
+    <p class="chapter">STORY</p>
+    <h2 class="accent-underline">브랜드 이야기</h2>
+    <p class="body-copy">인사동보리밥은 '정성이 깃든 한 끼를 전한다'는 마음으로 시작한 한식 브랜드입니다. 한국인의 밥 문화는 정성과 따뜻함, 그리고 기본의 힘으로 완성됩니다.</p>
+    <p class="body-copy">나물과 장, 밥이 어우러진 한 상을 누구에게나 익숙하고 편안하게 차려냅니다.</p>
+    <span class="seal" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- ===== 대표 인사말 (자료 대기 — placeholder / data-todo) ===== -->
+<section class="page-section greeting">
+  <div class="greeting-card" data-todo="대표 인사말 원문 확보 후 교체 (전 자료에 없음)">
+    <p class="chapter">GREETING</p>
+    <blockquote class="greeting-quote">찾아주시는 한 분 한 분께,<br class="br-d"> 오늘도 변함없는 정갈한 한 상을 올립니다.</blockquote>
+    <p class="greeting-sign" data-todo="대표 성함 확정 필요 (임상균·임성균 확인)">대표 〈확인 예정〉</p>
+    <span class="seal" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- ===== 재료의 진심 (메인 오프셋 에디토리얼 재사용) ===== -->
+<section class="ingredients-sec">
+  <div class="section-head">
+    <p class="chapter">INGREDIENTS</p>
+    <h2 class="accent-underline">재료의 진심</h2>
+    <p class="section-lead">좋은 재료를 아는 사람이 직접 밥상을 차렸습니다. 재료를 고르는 일부터 상을 차리는 일까지, 매일 우리 손으로 합니다.</p>
+  </div>
+  <div class="ing-strip">
+    <figure>
+      <img src="assets/img/ing-gejang.jpg" alt="국내산 연평도 암꽃게로 담근 간장게장">
+      <figcaption>
+        <span class="ing-name">국내산 연평도 암꽃게</span>
+        <span class="ing-desc">알이 꽉 찬 연평도 암꽃게만 골라 간장에 정성껏 담급니다.</span>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/ing-chamgireum.jpg" alt="황학동 통참깨로 짠 참기름">
+      <figcaption>
+        <span class="ing-name">황학동 통참깨 참기름</span>
+        <span class="ing-desc">황학동에서 100% 통참깨만 눌러 짠 참기름으로 맛을 마무리합니다.</span>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/ing-barley.jpg" alt="매일 새로 짓는 국내산 보리밥">
+      <figcaption>
+        <span class="ing-name">매일 새로 짓는 보리밥</span>
+        <span class="ing-desc">국내산 보리를 매일 새로 지어 담백한 밥을 냅니다.</span>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="assets/img/story-jang.jpg" alt="직접 담근 양념과 장">
+      <figcaption>
+        <span class="ing-name">직접 담근 양념과 장</span>
+        <span class="ing-desc">장과 양념을 직접 담가, 상 위의 기본을 지킵니다.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="rule-hairline">
+
+<!-- ===== 신뢰 지표 (Lucide 계열 라인 아이콘 + 짧은 팩트) ===== -->
+<section class="page-section support">
+  <div class="section-head">
+    <p class="chapter">TRUST</p>
+    <h2 class="accent-underline">믿을 수 있는 근거</h2>
+    <p class="section-lead">맛의 처음과 끝을 제조 전문 회사 그래이츠가 직접 책임집니다. 인증과 성과가 그 기본기를 증명합니다.</p>
+  </div>
+  <div class="support-grid trust-grid">
+    <div class="support-item">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.72 8.95a1 1 0 0 1-.56 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      <h4>HACCP 인증</h4>
+      <p>절임류·수산가공품·양념육을<br class="br-d"> 자체 공장에서 생산합니다</p>
+    </div>
+    <div class="support-item">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+      <h4>FDA 시설 등록</h4>
+      <p>미국 식품 시설 등록으로<br class="br-d"> 해외 기준까지 갖췄습니다</p>
+    </div>
+    <div class="support-item">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+      <h4>3無 무첨가</h4>
+      <p>합성향료·합성감미료·<br class="br-d"> 합성착색료를 넣지 않습니다</p>
+    </div>
+    <div class="support-item">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></svg>
+      <h4>현대백화점 입점</h4>
+      <p>현대백화점 온라인 식품관에<br class="br-d"> 입점해 있습니다</p>
+    </div>
+    <div class="support-item">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <h4>홍콩·미국 수출</h4>
+      <p>2021년 홍콩,<br class="br-d"> 2024년 미국으로 나아갑니다</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 하단 CTA (낙관 서명) ===== -->
+<section class="cta-band">
+  <p class="chapter">INVITATION</p>
+  <h2>같은 길을<br class="br-m"> 함께 걸어가실 분을 찾습니다</h2>
+  <a class="btn-outline dark" href="franchise.html">창업안내 보기</a>
+  <span class="seal" aria-hidden="true"></span>
+</section>
+
+<!-- ===== 푸터 (style.css 재사용) ===== -->
+<footer class="site-footer">
+  <img class="f-logo-img" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
+  <p class="f-info">
+    주식회사 그래이츠 &nbsp;|&nbsp;
+    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">네이버 스마트스토어</a> &nbsp;|&nbsp;
+    <a href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 플레이스</a>
+  </p>
+  <p class="f-copy">© 2026 GREATS. All rights reserved.</p>
+</footer>
+
+<script>
+// 모바일 햄버거 (메인과 동일 동작)
+(function () {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('mNav');
+  if (!btn || !nav) return;
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.classList.toggle('m-open', open);
+  }
+  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+})();
+</script>
+</body>
+</html>

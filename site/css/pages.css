@@ -1,0 +1,194 @@
+/* ==========================================================
+   인사동보리밥 — 하위 페이지 공용 스타일 (pages.css)
+   style.css 재사용(토큰·헤더·푸터·버튼) + 문서형 레이아웃 신설.
+   ⚠️ style.css 는 수정하지 않는다. 하위 전용은 전부 이 파일.
+   ========================================================== */
+
+/* 하위 페이지는 스냅 아님 — 자연 문서 스크롤 */
+html { scroll-snap-type: none; }
+
+/* 헤더는 하위에서 크림 배경 고정(on-light 상시) */
+.site-header.on-light { background: transparent; }
+
+/* ===== 페이지 히어로 (풀스크린 아님, 지붕라인 크라운 + 명조) ===== */
+.page-hero {
+  position: relative;
+  min-height: 40vh;
+  padding: 144px 24px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--hanji) 0%, var(--cream) 100%);
+  overflow: hidden;
+}
+.page-hero .roofline {
+  width: clamp(300px, 40vw, 540px);
+  opacity: .8;
+  margin: 0 auto 24px;
+  pointer-events: none;
+}
+.page-hero .chapter { margin-bottom: 16px; }
+.page-hero h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(28px, 4.2vw, 48px);
+  line-height: 1.5;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.page-hero .sub-en {
+  font-family: var(--serif-en);
+  font-size: clamp(16px, 2vw, 21px);
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  opacity: .72;
+  margin-top: 18px;
+}
+
+/* ===== 섹션 공통 ===== */
+.page-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(64px, 8vw, 108px) clamp(24px, 5vw, 56px);
+}
+.section-head { text-align: center; margin-bottom: clamp(36px, 5vw, 58px); }
+.section-head .chapter { margin-bottom: 15px; }
+.section-head h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(24px, 3.4vw, 40px);
+  line-height: 1.42;
+  color: var(--ink);
+  text-wrap: balance;
+}
+/* 인장적색 섹션 오프너 밑줄 (메인 h3::after 계열 승계) */
+.accent-underline::after {
+  content: '';
+  display: block;
+  width: 46px; height: 2px;
+  margin: 20px auto 0;
+  background: var(--seal-red);
+  opacity: .82;
+}
+.section-lead {
+  max-width: 640px;
+  margin: 20px auto 0;
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  word-break: keep-all;
+  text-wrap: pretty;
+}
+
+/* ===== 경쟁력 카드 (사진 + 텍스트, 켄번즈 hover) ===== */
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.4vw, 30px);
+}
+.comp-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid rgba(42, 39, 36, .08);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px -28px rgba(40, 26, 14, .5);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+.comp-card:hover { transform: translateY(-5px); box-shadow: 0 26px 50px -26px rgba(40, 26, 14, .55); }
+.comp-card .c-photo { aspect-ratio: 4 / 3; overflow: hidden; }
+.comp-card .c-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1s ease;
+}
+.comp-card:hover .c-photo img { transform: scale(1.06); }
+.comp-card .c-body { padding: 26px 28px 30px; }
+.comp-card .c-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 13px; letter-spacing: .2em;
+  color: var(--seal-red); opacity: .82;
+  margin-bottom: 10px;
+}
+.comp-card h3 {
+  font-family: var(--serif);
+  font-weight: 700; font-size: 21px; letter-spacing: .04em;
+  color: var(--ink); margin-bottom: 12px;
+}
+.comp-card p {
+  font-size: 15px; line-height: 1.85;
+  color: var(--ink-soft); word-break: keep-all;
+}
+
+/* ===== 본사 지원 (Lucide 계열 라인 아이콘 4열) ===== */
+.support { background: linear-gradient(180deg, var(--cream) 0%, var(--hanji) 100%); }
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  max-width: 1000px; margin: 0 auto;
+}
+.support-item { text-align: center; padding: 0 6px; }
+.svg-icon {
+  width: 40px; height: 40px;
+  stroke: var(--ink); stroke-width: 1.5;
+  fill: none; stroke-linecap: round; stroke-linejoin: round;
+  display: block; margin: 0 auto 18px;
+  opacity: .9;
+}
+.support-item h4 {
+  font-family: var(--serif);
+  font-weight: 700; font-size: 17px; letter-spacing: .04em;
+  color: var(--ink); margin-bottom: 10px;
+}
+.support-item p {
+  font-size: 14px; line-height: 1.8;
+  color: var(--ink-soft); word-break: keep-all;
+}
+
+/* 얇은 헤어라인 divider (웜톤, 카드 대신 리듬) */
+.rule-hairline { height: 1px; background: rgba(42, 39, 36, .13); border: 0; }
+
+/* ===== 하단 CTA 밴드 (낙관 서명으로 마무리) ===== */
+.cta-band {
+  text-align: center;
+  padding: clamp(76px, 9vw, 122px) 24px;
+  background: var(--cream);
+}
+.cta-band .chapter { margin-bottom: 16px; }
+.cta-band h2 {
+  font-family: var(--serif);
+  font-weight: 700; font-size: clamp(24px, 3.4vw, 38px);
+  line-height: 1.45; color: var(--ink); text-wrap: balance;
+}
+.cta-band .btn-outline.dark { margin-top: 40px; }
+.cta-band .seal { margin: 30px auto 0; }
+
+/* ===== 문의 폼 ===== */
+.inquiry { background: var(--white); }
+.inquiry-form { max-width: 640px; margin: 0 auto; display: grid; gap: 20px; }
+.inquiry-form .field { display: flex; flex-direction: column; gap: 8px; }
+.inquiry-form label { font-size: 14px; letter-spacing: .04em; color: var(--ink-soft); }
+.inquiry-form input, .inquiry-form textarea {
+  font-family: var(--sans); font-size: 15px; color: var(--ink);
+  background: var(--cream); border: 1px solid rgba(42, 39, 36, .16);
+  border-radius: 4px; padding: 13px 15px; width: 100%;
+}
+.inquiry-form input:focus, .inquiry-form textarea:focus { outline: none; border-color: var(--seal-red); }
+.inquiry-form textarea { min-height: 118px; resize: vertical; }
+.inquiry-form .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.inquiry-agree { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+.inquiry-agree input { width: auto; margin-top: 3px; }
+.inquiry-form button.btn-outline.dark { justify-self: center; margin-top: 8px; border: 0; background: var(--ink); color: var(--white); cursor: pointer; }
+.inquiry-form button.btn-outline.dark:hover { background: var(--seal-red); }
+
+/* ===== 반응형 900 ===== */
+@media (max-width: 900px) {
+  .page-hero { min-height: auto; padding: 118px 22px 52px; }
+  .page-section { padding: 62px 22px; }
+  .comp-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 16px; }
+  .support-grid { grid-template-columns: 1fr 1fr; gap: 34px 20px; }
+  .inquiry-form .row-2 { grid-template-columns: 1fr; }
+}

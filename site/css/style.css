@@ -23,7 +23,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-snap-type: y proximity; scroll-behavior: smooth; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
 body {
   font-family: var(--sans);
   color: var(--ink);
@@ -413,13 +413,14 @@ br.br-m { display: none; }
 
 /* ===== S5. 네 가지 약속 — [B] 2×2 카드 + [N1] 한자 넘버링 ===== */
 .promises { background: linear-gradient(180deg, var(--cream) 0%, var(--hanji) 100%); }
-.promises .panel-inner { position: relative; padding-top: 60px; padding-bottom: 44px; }
+.promises .panel-inner { position: relative; padding-top: clamp(64px, 8svh, 92px); padding-bottom: clamp(22px, 3.4svh, 44px); }
+.promise-title { margin-bottom: clamp(10px, 1.6svh, 22px); }
 /* 기와 라인 — 섹션 상단 크라운 (제목 위 delicate 장식) */
 .roofline {
   display: block;
-  width: clamp(420px, 48vw, 720px);
+  width: clamp(290px, 38vw, 580px);
   opacity: .85;
-  margin: 0 auto 30px;
+  margin: 0 auto clamp(12px, 1.8svh, 26px);
   pointer-events: none;
 }
 /* "4게의 약속" — 게 pun 강조: 위·아래 스타카토(방점) */
@@ -433,11 +434,11 @@ br.br-m { display: none; }
   counter-reset: promise;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 26px;
-  margin-top: 26px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 1.5vw, 22px);
+  margin-top: clamp(18px, 2.6svh, 32px);
   width: 100%;
-  max-width: 1140px;
+  max-width: 1180px;
 }
 .promise-grid li {
   position: relative;
@@ -453,9 +454,9 @@ br.br-m { display: none; }
   transform: translateY(-5px);
   box-shadow: 0 26px 50px -24px rgba(40, 26, 14, .55);
 }
-/* 카드 사진 — 상단, 호버 시 켄번즈(느린 확대) */
+/* 카드 사진 — 상단 세로형, 높이는 화면 높이에 비례(svh)해 어떤 스크린에도 한 화면에 맞게 */
 .p-photo {
-  aspect-ratio: 16 / 11;
+  height: clamp(140px, 21svh, 292px);
   overflow: hidden;
 }
 .p-photo img {
@@ -464,35 +465,35 @@ br.br-m { display: none; }
   transition: transform 1s ease;
 }
 .promise-grid li:hover .p-photo img { transform: scale(1.06); }
-.p-body { padding: 30px 34px 34px; }
+.p-body { padding: clamp(18px, 2.4svh, 28px) clamp(16px, 1.4vw, 22px) clamp(20px, 2.6svh, 28px); }
 .p-num {
   display: block;
   font-family: var(--serif);
-  font-size: 13px;
-  letter-spacing: .22em;
+  font-size: 12.5px;
+  letter-spacing: .2em;
   color: var(--seal-red);
   opacity: .78;
-  margin-bottom: 12px;
+  margin-bottom: clamp(8px, 1.2svh, 12px);
 }
 .promise-grid h3 {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 27px;
-  letter-spacing: .1em;
-  margin-bottom: 14px;
+  font-size: clamp(21px, 1.55vw, 26px);
+  letter-spacing: .08em;
+  margin-bottom: clamp(10px, 1.4svh, 14px);
 }
 .promise-grid h3::after {
   content: '';
   display: block;
-  width: 28px; height: 2px;
-  margin: 14px auto 0;
+  width: 26px; height: 2px;
+  margin: clamp(10px, 1.4svh, 14px) auto 0;
   background: var(--seal-red);
   opacity: .55;
 }
 .promise-grid p {
-  font-size: 16px;
+  font-size: clamp(13.5px, 1vw, 15.5px);
   font-weight: 400;
-  line-height: 1.95;
+  line-height: 1.8;
   color: var(--ink-soft);
 }
 
@@ -649,7 +650,7 @@ br.br-m { display: none; }
   .feature-cap { left: 28px; bottom: 32px; }
   .promise-grid li + li::after { display: none; }
   .promise-grid { grid-template-columns: 1fr; gap: 14px; max-width: 460px; }
-  .promise-grid li { padding: 26px 24px 24px; }
+  .promise-grid .p-photo { height: clamp(150px, 26svh, 220px); }
   .ingredients { min-height: 100svh; }
   .ing-copy { padding-top: 110px; }
   .ing-strip { flex-direction: column; align-items: stretch; height: auto; min-height: auto; padding: 0 20px 40px; gap: 14px; }

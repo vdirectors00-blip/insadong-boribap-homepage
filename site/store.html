@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>매장 · 인사동보리밥</title>
-<meta name="description" content="인사동보리밥 본점 오시는 길. 서울 종로구 인사동 7길 37, 지하 1층. 지도와 영업 정보를 안내합니다.">
+<meta name="description" content="인사동보리밥 본점 오시는 길. 서울 종로구 인사동 7길 37, 지하 1층. HACCP 인증 제조사 그래이츠가 만드는 정갈한 한 상.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,14 +14,10 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/pages.css">
 <style>
-  /* ===== store.html 전용 ===== */
-  .store-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:1120px; margin:clamp(30px,4vw,48px) auto 0; }
-  .store-gallery img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:6px; }
   .map-wrap { position:relative; width:100%; max-width:960px; margin:0 auto; aspect-ratio:16/9; border-radius:8px; overflow:hidden; border:1px solid rgba(42,39,36,.12); box-shadow:0 18px 44px -30px rgba(40,26,14,.5); }
   .map-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
   .map-actions { text-align:center; margin-top:26px; }
-  /* 괘선 정보표 (Aesop식 directory) */
-  .info-dl { max-width:680px; margin:0 auto; }
+  .info-dl { max-width:680px; margin:clamp(44px,6vw,72px) auto 0; }
   .info-row { display:flex; align-items:flex-start; gap:18px; padding:22px 4px; border-top:1px solid rgba(42,39,36,.13); }
   .info-row:last-child { border-bottom:1px solid rgba(42,39,36,.13); }
   .info-row .svg-icon { width:24px; height:24px; margin:2px 0 0; flex-shrink:0; opacity:.85; }
@@ -31,10 +27,7 @@
   .directions { max-width:680px; margin:clamp(30px,4vw,44px) auto 0; display:flex; align-items:center; gap:14px; justify-content:center; text-align:center; }
   .directions .svg-icon { width:26px; height:26px; margin:0; }
   .directions p { font-size:15.5px; line-height:1.7; color:var(--ink-soft); word-break:keep-all; }
-  @media (max-width:900px){
-    .store-gallery { grid-template-columns:1fr 1fr; }
-    .info-row .k { min-width:64px; }
-  }
+  @media (max-width:900px){ .info-row .k { min-width:64px; } }
 </style>
 </head>
 <body>
@@ -45,75 +38,52 @@
     <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
   </a>
   <nav class="gnb" aria-label="주 메뉴">
-    <a href="brand.html">브랜드</a>
-    <a href="menu.html">메뉴</a>
-    <a href="store.html" aria-current="page">매장</a>
-    <a href="franchise.html">창업안내</a>
+    <a href="brand.html">브랜드</a><a href="menu.html">메뉴</a><a href="store.html" aria-current="page">매장</a><a href="franchise.html">창업안내</a>
     <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
   </nav>
   <div class="header-utils">
-    <a class="lang active" href="#" aria-current="true">KOR</a>
-    <span class="lang-sep" aria-hidden="true"></span>
-    <a class="lang" href="#" title="English 준비중">ENG</a>
+    <a class="lang active" href="#" aria-current="true">KOR</a><span class="lang-sep" aria-hidden="true"></span><a class="lang" href="#" title="English 준비중">ENG</a>
   </div>
-  <button class="nav-toggle" id="navToggle" aria-label="메뉴" aria-expanded="false" aria-controls="mNav">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴" aria-expanded="false" aria-controls="mNav"><span></span><span></span><span></span></button>
 </header>
 
 <div class="m-nav" id="mNav" aria-hidden="true">
-  <a href="brand.html">브랜드</a>
-  <a href="menu.html">메뉴</a>
-  <a href="store.html">매장</a>
-  <a href="franchise.html">창업안내</a>
+  <a href="brand.html">브랜드</a><a href="menu.html">메뉴</a><a href="store.html">매장</a><a href="franchise.html">창업안내</a>
   <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
-  <div class="m-nav-lang">
-    <a class="lang active" href="#">KOR</a>
-    <span class="lang-sep" aria-hidden="true"></span>
-    <a class="lang" href="#" title="English 준비중">ENG</a>
-  </div>
+  <div class="m-nav-lang"><a class="lang active" href="#">KOR</a><span class="lang-sep" aria-hidden="true"></span><a class="lang" href="#" title="English 준비중">ENG</a></div>
 </div>
 
-<!-- ===== 사진 히어로 (한옥) ===== -->
-<section class="page-hero photo" style="--hero-bg:url('assets/img/hero-store.jpg')">
-  <p class="chapter">STORE</p>
-  <h1>인사동에서,<br class="br-m"> 따뜻한 한 끼</h1>
-  <p class="sub-en">Find us in Insadong.</p>
-</section>
-
-<!-- ===== 공간 소개 + 갤러리 ===== -->
-<section class="page-section">
-  <div class="section-head">
-    <p class="chapter">SPACE</p>
-    <h2 class="accent-underline">인사동 골목의 한 자리</h2>
-    <p class="section-lead">화려함보다는 정겨움을 담은 공간입니다. 따뜻한 밥 한 그릇에 잠시 쉬어가시길 바랍니다.</p>
-  </div>
-  <div class="store-gallery">
-    <img src="assets/img/space-table.jpg" alt="정갈하게 차려지는 한 상">
-    <img src="assets/img/table-full.jpg" alt="인사동보리밥 한 상 차림">
-    <img src="assets/img/space-insadong.jpg" alt="인사동보리밥 매장 분위기">
+<!-- ===== 히어로 (한옥) ===== -->
+<section class="fb">
+  <img src="assets/img/hero-store.jpg" alt="인사동 한옥 골목">
+  <div class="fb-inner">
+    <span class="en">STORE</span>
+    <h2>인사동에서,<br> 따뜻한 한 끼</h2>
+    <span class="loc">Find us in Insadong</span>
   </div>
 </section>
 
-<hr class="rule-hairline">
-
-<!-- ===== 인증 · 제조 (그래이츠) ===== -->
-<section class="page-section support">
-  <div class="section-head">
-    <p class="chapter">TRUST</p>
-    <h2 class="accent-underline">HACCP 인증 제조사가 만듭니다</h2>
-    <p class="section-lead">인사동보리밥의 맛은 제조 전문 회사 그래이츠의 HACCP 인증 자체 공장에서 시작됩니다. 철저한 위생 관리와 표준화된 공정으로 안전한 한 끼를 지킵니다.</p>
-  </div>
-  <div class="mfg-band">
-    <figure><img src="assets/img/factory-1.jpg" alt="HACCP 인증 위생 시설 작업"><figcaption>HACCP 인증 위생 시설</figcaption></figure>
-    <figure><img src="assets/img/factory-2.jpg" alt="철저한 생산 관리 시설"><figcaption>철저한 생산 관리</figcaption></figure>
-    <figure><img src="assets/img/award.jpg" alt="수산식품 수출 브랜드대전 동상 수상패"><figcaption>수출 브랜드대전 동상</figcaption></figure>
+<!-- ===== 공간 (풀블리드) ===== -->
+<section class="fb">
+  <img src="assets/img/serving.jpg" alt="매장에 오르는 정갈한 상차림">
+  <div class="fb-inner">
+    <span class="en">SPACE</span>
+    <h2>인사동 골목의<br> 한 자리</h2>
+    <p class="cap">화려함보다는 정겨움을 담은 공간입니다. 따뜻한 밥 한 그릇에 잠시 쉬어가시길 바랍니다.</p>
   </div>
 </section>
 
-<hr class="rule-hairline">
+<!-- ===== 인증 · 제조 (풀블리드) ===== -->
+<section class="fb">
+  <img src="assets/img/factory-1.jpg" alt="HACCP 인증 위생 시설">
+  <div class="fb-inner">
+    <span class="en">MANUFACTURING</span>
+    <h2>HACCP 인증<br> 제조사가 만듭니다</h2>
+    <p class="cap">제조 전문 회사 그래이츠의 HACCP 인증 자체 공장에서, 철저한 위생 관리로 안전한 한 끼를 지킵니다.</p>
+  </div>
+</section>
 
-<!-- ===== 지도 ===== -->
+<!-- ===== 지도 · 매장 정보 ===== -->
 <section class="page-section">
   <div class="section-head">
     <p class="chapter">MAP</p>
@@ -125,31 +95,24 @@
   <div class="map-actions">
     <a class="btn-outline dark slim" href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 지도에서 보기</a>
   </div>
-
-  <!-- 매장 정보 (괘선 directory) -->
-  <div class="info-dl" style="margin-top:clamp(44px,6vw,72px);">
+  <div class="info-dl">
     <div class="info-row">
       <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.4-5.4 9.2-7.3 10.7a1 1 0 0 1-1.4 0C9.4 19.2 4 14.4 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span class="k">주소</span>
-      <span class="v">서울 종로구 인사동 7길 37, 지하 1층</span>
+      <span class="k">주소</span><span class="v">서울 종로구 인사동 7길 37, 지하 1층</span>
     </div>
     <div class="info-row">
       <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      <span class="k">영업시간</span>
-      <span class="v">월–토 11:00 – 20:30<small>라스트오더 20:00 · 브레이크타임 15:00 – 17:00</small></span>
+      <span class="k">영업시간</span><span class="v">월–토 11:00 – 20:30<small>라스트오더 20:00 · 브레이크타임 15:00 – 17:00</small></span>
     </div>
     <div class="info-row">
       <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg>
-      <span class="k">휴무</span>
-      <span class="v">매주 일요일 정기 휴무</span>
+      <span class="k">휴무</span><span class="v">매주 일요일 정기 휴무</span>
     </div>
     <div class="info-row" data-todo="전화번호 노출/정확성 확인">
       <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.83 19.94a17.6 17.6 0 0 1-7.72-4.05 17.6 17.6 0 0 1-4.05-7.72 2 2 0 0 1 1.11-2.28l2.2-.92a2 2 0 0 1 2.5.9l.86 1.72a2 2 0 0 1-.3 2.28l-.7.7a13 13 0 0 0 4.55 4.55l.7-.7a2 2 0 0 1 2.28-.3l1.72.86a2 2 0 0 1 .9 2.5l-.92 2.2a2 2 0 0 1-2.28 1.11z"/></svg>
-      <span class="k">전화</span>
-      <span class="v"><a href="tel:0507-1327-6086" style="color:inherit;">0507-1327-6086</a></span>
+      <span class="k">전화</span><span class="v"><a href="tel:0507-1327-6086" style="color:inherit;">0507-1327-6086</a></span>
     </div>
   </div>
-
   <div class="directions">
     <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="m8 19-2 3"/><path d="m18 22-2-3"/><circle cx="8.5" cy="15.5" r="1"/><circle cx="15.5" cy="15.5" r="1"/></svg>
     <p>종각역·안국역에서 도보로 오실 수 있습니다.</p>
@@ -157,30 +120,27 @@
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="cta-band">
-  <p class="chapter">VISIT</p>
-  <h2>미리 연락 주시면<br class="br-m"> 편하게 준비해 드립니다</h2>
-  <a class="btn-outline dark" href="tel:0507-1327-6086">전화로 문의하기</a>
-  <span class="seal" aria-hidden="true"></span>
+<section class="fb short">
+  <img src="assets/img/hanok-2.jpg" alt="인사동 한옥 거리">
+  <div class="fb-inner">
+    <span class="en">VISIT</span>
+    <h2>미리 연락 주시면<br> 편하게 준비해 드립니다</h2>
+    <a class="btn-outline" href="tel:0507-1327-6086" style="margin-top:34px;">전화로 문의하기</a>
+  </div>
 </section>
 
 <footer class="site-footer">
   <img class="f-logo-img" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
-  <p class="f-info">
-    주식회사 그래이츠 &nbsp;|&nbsp;
-    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">네이버 스마트스토어</a> &nbsp;|&nbsp;
-    <a href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 플레이스</a>
-  </p>
+  <p class="f-info">주식회사 그래이츠 &nbsp;|&nbsp; <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">네이버 스마트스토어</a> &nbsp;|&nbsp; <a href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 플레이스</a></p>
   <p class="f-copy">© 2026 GREATS. All rights reserved.</p>
 </footer>
 
 <script>
 (function () {
   var h=document.getElementById('siteHeader');
-  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.52); }
+  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.7); }
   window.addEventListener('scroll', s, {passive:true}); s();
   var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
-  if(!btn||!nav) return;
   function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }
   btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
   nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });

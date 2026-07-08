@@ -13,22 +13,6 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/pages.css">
-<style>
-  .brand-story .split-copy { text-align:left; }
-  .brand-story h2 { font-family:var(--serif); font-weight:700; font-size:clamp(24px,3.2vw,36px); line-height:1.45; color:var(--ink); text-wrap:balance; }
-  .brand-story .accent-underline::after { margin:22px 0 0; }
-  .brand-story .body-copy { margin-top:24px; font-size:17px; line-height:1.95; }
-  .brand-story .body-copy + .body-copy { margin-top:18px; }
-  .brand-story .seal { margin-top:38px; }
-  .origin-stack { display:flex; flex-direction:column; gap:clamp(16px,2.4vw,26px); }
-  .greeting { text-align:center; }
-  .greeting-card { max-width:680px; margin:0 auto; }
-  .greeting-quote { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.6vw,30px); line-height:1.85; color:var(--ink); text-wrap:balance; }
-  .greeting-sign { margin-top:26px; font-family:var(--serif); font-size:16px; letter-spacing:.1em; color:var(--ink-soft); }
-  .greeting .seal { margin:32px auto 0; }
-  .trust-grid { grid-template-columns:repeat(5,1fr); max-width:1120px; gap:clamp(18px,2.4vw,34px); }
-  @media (max-width:900px){ .trust-grid { grid-template-columns:1fr 1fr; gap:34px 20px; } }
-</style>
 </head>
 <body>
 
@@ -55,129 +39,83 @@
 </header>
 
 <div class="m-nav" id="mNav" aria-hidden="true">
-  <a href="brand.html">브랜드</a>
-  <a href="menu.html">메뉴</a>
-  <a href="store.html">매장</a>
-  <a href="franchise.html">창업안내</a>
+  <a href="brand.html">브랜드</a><a href="menu.html">메뉴</a><a href="store.html">매장</a><a href="franchise.html">창업안내</a>
   <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
-  <div class="m-nav-lang">
-    <a class="lang active" href="#">KOR</a>
-    <span class="lang-sep" aria-hidden="true"></span>
-    <a class="lang" href="#" title="English 준비중">ENG</a>
-  </div>
+  <div class="m-nav-lang"><a class="lang active" href="#">KOR</a><span class="lang-sep" aria-hidden="true"></span><a class="lang" href="#" title="English 준비중">ENG</a></div>
 </div>
 
-<!-- ===== 사진 히어로 (놋그릇 상차림) ===== -->
-<section class="page-hero photo" style="--hero-bg:url('assets/img/hero-brand.jpg')">
-  <p class="chapter">BRAND</p>
-  <h1>정성과 시간으로 담아낸<br class="br-m"> 정갈한 한 끼</h1>
-  <p class="sub-en">Crafted with time and care.</p>
-</section>
-
-<!-- ===== 브랜드 스토리 ===== -->
-<section class="split brand-story">
-  <div class="split-photo"><img src="assets/img/story-boribap.jpg" alt="정갈하게 차려낸 보리밥 한 상"></div>
-  <div class="split-copy hanji">
-    <p class="chapter">STORY</p>
-    <h2 class="accent-underline">좋은 재료를 아는 사람이<br class="br-d"> 직접 차렸습니다</h2>
-    <p class="body-copy">인사동보리밥은 '정성이 깃든 한 끼를 전한다'는 마음으로 시작한 한식 브랜드입니다. 한국인의 밥 문화는 정성과 따뜻함, 그리고 기본의 힘으로 완성됩니다.</p>
-    <p class="body-copy">나물과 장, 밥이 어우러진 한 상을 누구에게나 익숙하고 편안하게 차려냅니다.</p>
-    <span class="seal" aria-hidden="true"></span>
+<!-- ===== 히어로 (풀블리드) ===== -->
+<section class="fb">
+  <img src="assets/img/hero-brand.jpg" alt="정갈하게 차려낸 놋그릇 한 상">
+  <div class="fb-inner">
+    <span class="en">BRAND</span>
+    <h2>정성과 시간으로 담아낸<br> 정갈한 한 끼</h2>
+    <span class="loc">Crafted with time and care</span>
   </div>
 </section>
 
-<!-- ===== 원물의 뿌리 (산지) ===== -->
-<section class="page-section">
-  <div class="section-head">
-    <p class="chapter">INGREDIENTS</p>
-    <h2 class="accent-underline">재료는 뿌리부터 다릅니다</h2>
-    <p class="section-lead">흉내 낼 수는 있어도, 진짜는 다릅니다. 매일 새로 짓는 국내산 보리부터 서해 연평도 암꽃게까지, 재료의 뿌리에서 맛이 시작됩니다.</p>
-  </div>
-  <div class="origin-stack">
-    <div class="signature">
-      <img src="assets/img/origin-barley.jpg" alt="국내산 보리밭">
-      <div class="sig-copy">
-        <p class="chapter">국내산 보리</p>
-        <h3>매일 새로 짓는<br> 담백한 보리밥</h3>
-        <p>국내산 보리를 매일 아침 새로 지어, 구수하고 담백하게 상에 올립니다.</p>
-      </div>
-    </div>
-    <div class="signature">
-      <img src="assets/img/origin-sea.jpg" alt="서해 연평도 조업 바다">
-      <div class="sig-copy">
-        <p class="chapter">서해 연평도</p>
-        <h3>알이 꽉 찬<br> 연평도 암꽃게</h3>
-        <p>서해 연평도 암꽃게만 골라, 직접 만든 소스에 게살 속까지 스며들도록 정성껏 담급니다.</p>
-      </div>
-    </div>
+<!-- ===== 브랜드 스토리 (여백 텍스트) ===== -->
+<div class="text-block">
+  <span class="en">OUR STORY</span>
+  <h2>좋은 재료를 아는 사람이<br class="br-d"> 직접 밥상을 차렸습니다</h2>
+  <p>인사동보리밥은 '정성이 깃든 한 끼를 전한다'는 마음으로 시작한 한식 브랜드입니다. 한국인의 밥 문화는 정성과 따뜻함, 그리고 기본의 힘으로 완성됩니다. 나물과 장, 밥이 어우러진 한 상을 누구에게나 익숙하고 편안하게 차려냅니다.</p>
+  <span class="seal" aria-hidden="true" style="display:block; margin:34px auto 0;"></span>
+</div>
+
+<!-- ===== 원물의 뿌리 (풀블리드) ===== -->
+<section class="fb">
+  <img src="assets/img/origin-barley.jpg" alt="국내산 보리밭">
+  <div class="fb-inner">
+    <span class="en">KOREAN BARLEY</span>
+    <h2>매일 새로 짓는<br> 국내산 보리밥</h2>
+    <p class="cap">국내산 보리를 매일 아침 새로 지어, 구수하고 담백하게 상에 올립니다.</p>
   </div>
 </section>
 
-<!-- ===== 대표 인사말 (자료 대기, placeholder) ===== -->
-<section class="page-section greeting" style="background:linear-gradient(180deg,var(--hanji),var(--cream));">
-  <div class="greeting-card" data-todo="대표 인사말 원문 확보 후 교체 (전 자료에 없음)">
-    <p class="chapter">GREETING</p>
-    <blockquote class="greeting-quote">찾아주시는 한 분 한 분께,<br class="br-d"> 오늘도 변함없는 정갈한 한 상을 올립니다.</blockquote>
-    <p class="greeting-sign" data-todo="대표 성함 확정 필요">대표 〈확인 예정〉</p>
-    <span class="seal" aria-hidden="true"></span>
+<section class="fb">
+  <img src="assets/img/origin-sea.jpg" alt="서해 연평도 조업 바다">
+  <div class="fb-inner">
+    <span class="en">FROM YEONPYEONG</span>
+    <h2>알이 꽉 찬<br> 연평도 암꽃게</h2>
+    <p class="cap">서해 연평도 암꽃게만 골라, 직접 만든 소스에 게살 속까지 스며들도록 정성껏 담급니다.</p>
   </div>
 </section>
 
-<hr class="rule-hairline">
+<!-- ===== 대표 인사말 (여백 텍스트, placeholder) ===== -->
+<div class="text-block" data-todo="대표 인사말 원문·성함 확보 후 교체">
+  <span class="en">GREETING</span>
+  <h2>찾아주시는 한 분 한 분께,<br class="br-d"> 오늘도 변함없는 한 상을 올립니다</h2>
+  <p data-todo="대표 성함 확정 필요">대표 〈확인 예정〉</p>
+  <span class="seal" aria-hidden="true" style="display:block; margin:30px auto 0;"></span>
+</div>
 
-<!-- ===== 신뢰 지표 ===== -->
-<section class="page-section support">
-  <div class="section-head">
-    <p class="chapter">TRUST</p>
-    <h2 class="accent-underline">믿을 수 있는 근거</h2>
-    <p class="section-lead">맛의 처음과 끝을 제조 전문 회사 그래이츠가 직접 책임집니다. 인증과 성과가 그 기본기를 증명합니다.</p>
-  </div>
-  <div class="support-grid trust-grid">
-    <div class="support-item">
-      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.72 8.95a1 1 0 0 1-.56 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-      <h4>HACCP 인증</h4><p>절임류·수산가공품·양념육을<br class="br-d"> 자체 공장에서 생산합니다</p>
-    </div>
-    <div class="support-item">
-      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/></svg>
-      <h4>FDA 시설 등록</h4><p>미국 식품 시설 등록으로<br class="br-d"> 해외 기준까지 갖췄습니다</p>
-    </div>
-    <div class="support-item">
-      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-      <h4>3無 무첨가</h4><p>합성향료·합성감미료·<br class="br-d"> 합성착색료를 넣지 않습니다</p>
-    </div>
-    <div class="support-item">
-      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>
-      <h4>현대백화점 입점</h4><p>현대백화점 온라인 식품관에<br class="br-d"> 입점해 있습니다</p>
-    </div>
-    <div class="support-item">
-      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-      <h4>홍콩·미국 수출</h4><p>2021년 홍콩,<br class="br-d"> 2024년 미국으로 나아갑니다</p>
-    </div>
-  </div>
-</section>
+<!-- ===== 신뢰 (여백 텍스트, 3무 제외) ===== -->
+<div class="text-block" style="background:linear-gradient(180deg,var(--hanji),var(--cream));">
+  <span class="en">TRUST</span>
+  <h2>맛의 처음과 끝을<br class="br-d"> 그래이츠가 직접 책임집니다</h2>
+  <p>HACCP 인증 자체 공장에서 직접 만들고, 현대백화점 온라인 식품관 입점과 홍콩·미국 수출로 그 맛을 인정받았습니다.</p>
+</div>
 
-<!-- ===== CTA ===== -->
-<section class="cta-band">
-  <p class="chapter">INVITATION</p>
-  <h2>같은 길을<br class="br-m"> 함께 걸어가실 분을 찾습니다</h2>
-  <a class="btn-outline dark" href="franchise.html">창업안내 보기</a>
-  <span class="seal" aria-hidden="true"></span>
+<!-- ===== CTA (풀블리드) ===== -->
+<section class="fb short">
+  <img src="assets/img/spread-top.jpg" alt="정갈하게 차려진 한 상">
+  <div class="fb-inner">
+    <span class="en">INVITATION</span>
+    <h2>같은 길을 함께<br> 걸어가실 분을 찾습니다</h2>
+    <a class="btn-outline" href="franchise.html" style="margin-top:34px;">창업안내 보기</a>
+  </div>
 </section>
 
 <footer class="site-footer">
   <img class="f-logo-img" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
-  <p class="f-info">
-    주식회사 그래이츠 &nbsp;|&nbsp;
-    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">네이버 스마트스토어</a> &nbsp;|&nbsp;
-    <a href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 플레이스</a>
-  </p>
+  <p class="f-info">주식회사 그래이츠 &nbsp;|&nbsp; <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">네이버 스마트스토어</a> &nbsp;|&nbsp; <a href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 플레이스</a></p>
   <p class="f-copy">© 2026 GREATS. All rights reserved.</p>
 </footer>
 
 <script>
 (function () {
   var h=document.getElementById('siteHeader');
-  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.52); }
+  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.7); }
   window.addEventListener('scroll', s, {passive:true}); s();
   var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
   function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }

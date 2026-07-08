@@ -39,7 +39,7 @@
 </head>
 <body>
 
-<header class="site-header on-light" id="siteHeader">
+<header class="site-header" id="siteHeader">
   <a class="logo" href="index.html" aria-label="인사동보리밥">
     <img class="logo-img logo-w" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
     <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
@@ -74,9 +74,8 @@
   </div>
 </div>
 
-<!-- ===== 히어로 ===== -->
-<section class="page-hero">
-  <img class="roofline" src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true">
+<!-- ===== 사진 히어로 (한옥) ===== -->
+<section class="page-hero photo" style="--hero-bg:url('assets/img/hero-store.jpg')">
   <p class="chapter">STORE</p>
   <h1>인사동에서,<br class="br-m"> 따뜻한 한 끼</h1>
   <p class="sub-en">Find us in Insadong.</p>
@@ -93,6 +92,22 @@
     <img src="assets/img/space-table.jpg" alt="정갈하게 차려지는 한 상">
     <img src="assets/img/table-full.jpg" alt="인사동보리밥 한 상 차림">
     <img src="assets/img/space-insadong.jpg" alt="인사동보리밥 매장 분위기">
+  </div>
+</section>
+
+<hr class="rule-hairline">
+
+<!-- ===== 인증 · 제조 (그래이츠) ===== -->
+<section class="page-section support">
+  <div class="section-head">
+    <p class="chapter">TRUST</p>
+    <h2 class="accent-underline">HACCP 인증 제조사가 만듭니다</h2>
+    <p class="section-lead">인사동보리밥의 맛은 제조 전문 회사 그래이츠의 HACCP 인증 자체 공장에서 시작됩니다. 철저한 위생 관리와 표준화된 공정으로 안전한 한 끼를 지킵니다.</p>
+  </div>
+  <div class="mfg-band">
+    <figure><img src="assets/img/factory-1.jpg" alt="HACCP 인증 위생 시설 작업"><figcaption>HACCP 인증 위생 시설</figcaption></figure>
+    <figure><img src="assets/img/factory-2.jpg" alt="철저한 생산 관리 시설"><figcaption>철저한 생산 관리</figcaption></figure>
+    <figure><img src="assets/img/award.jpg" alt="수산식품 수출 브랜드대전 동상 수상패"><figcaption>수출 브랜드대전 동상</figcaption></figure>
   </div>
 </section>
 
@@ -161,18 +176,14 @@
 
 <script>
 (function () {
-  const btn = document.getElementById('navToggle');
-  const nav = document.getElementById('mNav');
-  if (!btn || !nav) return;
-  function setOpen(open) {
-    nav.classList.toggle('open', open);
-    btn.classList.toggle('is-open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    nav.setAttribute('aria-hidden', open ? 'false' : 'true');
-    document.body.classList.toggle('m-open', open);
-  }
-  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
-  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  var h=document.getElementById('siteHeader');
+  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.52); }
+  window.addEventListener('scroll', s, {passive:true}); s();
+  var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
+  if(!btn||!nav) return;
+  function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }
+  btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
 })();
 </script>
 </body>

@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<header class="site-header on-light" id="siteHeader">
+<header class="site-header" id="siteHeader">
   <a class="logo" href="index.html" aria-label="인사동보리밥">
     <img class="logo-img logo-w" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
     <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
@@ -77,9 +77,8 @@
   </div>
 </div>
 
-<!-- ===== 히어로 ===== -->
-<section class="page-hero">
-  <img class="roofline" src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true">
+<!-- ===== 사진 히어로 ===== -->
+<section class="page-hero photo" style="--hero-bg:url('assets/img/hero-news.jpg')">
   <p class="chapter">NEWS</p>
   <h1>소식</h1>
   <p class="sub-en">What's new.</p>
@@ -142,18 +141,14 @@
 
 <script>
 (function () {
-  const btn = document.getElementById('navToggle');
-  const nav = document.getElementById('mNav');
-  if (!btn || !nav) return;
-  function setOpen(open) {
-    nav.classList.toggle('open', open);
-    btn.classList.toggle('is-open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    nav.setAttribute('aria-hidden', open ? 'false' : 'true');
-    document.body.classList.toggle('m-open', open);
-  }
-  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
-  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  var h=document.getElementById('siteHeader');
+  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.52); }
+  window.addEventListener('scroll', s, {passive:true}); s();
+  var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
+  if(!btn||!nav) return;
+  function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }
+  btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
 })();
 </script>
 </body>

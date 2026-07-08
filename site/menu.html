@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>메뉴 · 인사동보리밥</title>
-<meta name="description" content="보리밥과 매일 정성껏 만든 8종 제철 나물이 기본으로 나오는 인사동보리밥의 정식과 게장, 곁들임 메뉴를 소개합니다.">
+<meta name="description" content="보리밥과 매일 정성껏 만든 8종 제철 나물이 기본으로 나오는 인사동보리밥의 정식과 게장, 곁들임 메뉴.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,27 +14,24 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/pages.css">
 <style>
-  /* ===== menu.html 전용 ===== */
-  .menu-note { text-align:center; max-width:640px; margin:0 auto 8px; font-size:16px; line-height:1.85; color:var(--ink-soft); word-break:keep-all; }
-  /* 정식 사진 카드 */
-  .dish-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2.4vw,28px); }
-  .dish-card { background:var(--white); border:1px solid rgba(42,39,36,.08); border-radius:8px; overflow:hidden; box-shadow:0 16px 40px -28px rgba(40,26,14,.5); transition:transform .4s ease, box-shadow .4s ease; }
-  .dish-card:hover { transform:translateY(-5px); box-shadow:0 26px 50px -26px rgba(40,26,14,.55); }
-  .dish-photo { aspect-ratio:4/3; overflow:hidden; }
-  .dish-photo img { width:100%; height:100%; object-fit:cover; transition:transform 1s ease; }
-  .dish-card:hover .dish-photo img { transform:scale(1.06); }
-  .dish-body { padding:22px 24px 26px; display:flex; flex-direction:column; gap:6px; }
-  .dish-name { font-family:var(--serif); font-weight:700; font-size:19px; letter-spacing:.03em; color:var(--ink); }
-  .dish-serve { font-size:12.5px; letter-spacing:.04em; color:var(--ink-soft); opacity:.72; }
-  .dish-price { font-family:var(--serif); font-size:16px; color:var(--seal-red); margin-top:4px; }
-  /* 게장·곁들임 괘선 목록 (Aesop식) */
-  .price-list { max-width:720px; margin:0 auto; }
-  .price-row { display:flex; align-items:baseline; gap:16px; padding:20px 4px; border-top:1px solid rgba(42,39,36,.13); }
-  .price-row:last-child { border-bottom:1px solid rgba(42,39,36,.13); }
-  .price-row .p-name { font-family:var(--serif); font-weight:700; font-size:18px; color:var(--ink); white-space:nowrap; }
-  .price-row .p-desc { font-size:14px; color:var(--ink-soft); word-break:keep-all; flex:1; }
-  .price-row .p-won { font-family:var(--serif); font-size:16px; color:var(--seal-red); white-space:nowrap; }
-  /* 이렇게 드세요 */
+  .menu-note { text-align:center; max-width:660px; margin:0 auto; font-size:16px; line-height:1.85; color:var(--ink-soft); word-break:keep-all; }
+  .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.2vw,26px); }
+  .cat-card { background:var(--white); border:1px solid rgba(42,39,36,.08); border-radius:8px; overflow:hidden; box-shadow:0 14px 36px -28px rgba(40,26,14,.5); transition:transform .4s ease, box-shadow .4s ease; }
+  .cat-card:hover { transform:translateY(-4px); box-shadow:0 24px 46px -26px rgba(40,26,14,.5); }
+  .cat-photo { aspect-ratio:4/3; overflow:hidden; }
+  .cat-photo img { width:100%; height:100%; object-fit:cover; transition:transform 1s ease; }
+  .cat-card:hover .cat-photo img { transform:scale(1.05); }
+  .cat-body { padding:20px 22px 24px; }
+  .cat-name { font-family:var(--serif); font-weight:700; font-size:19px; color:var(--ink); letter-spacing:.02em; }
+  .cat-serve { font-size:12px; color:var(--ink-soft); opacity:.7; margin-left:6px; font-family:var(--sans); }
+  .cat-desc { font-size:13.5px; line-height:1.7; color:var(--ink-soft); margin-top:9px; word-break:keep-all; }
+  .cat-price { font-family:var(--serif); font-size:16px; color:var(--seal-red); margin-top:12px; }
+  .side-list { max-width:720px; margin:clamp(22px,3vw,34px) auto 0; }
+  .side-row { display:flex; align-items:baseline; gap:14px; padding:18px 4px; border-top:1px solid rgba(42,39,36,.13); }
+  .side-row:last-child { border-bottom:1px solid rgba(42,39,36,.13); }
+  .side-row .s-name { font-family:var(--serif); font-weight:700; font-size:17px; color:var(--ink); white-space:nowrap; }
+  .side-row .s-desc { font-size:13.5px; color:var(--ink-soft); flex:1; word-break:keep-all; }
+  .side-row .s-won { font-family:var(--serif); font-size:15px; color:var(--seal-red); white-space:nowrap; }
   .eat { background:linear-gradient(180deg,var(--cream) 0%,var(--hanji) 100%); }
   .eat-groups { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,5vw,72px); max-width:900px; margin:0 auto; }
   .eat-group h3 { text-align:center; font-family:var(--serif); font-weight:700; font-size:20px; letter-spacing:.05em; color:var(--ink); margin-bottom:26px; }
@@ -43,18 +40,19 @@
   .eat-step .n { font-family:var(--serif); font-size:15px; letter-spacing:.1em; color:var(--seal-red); opacity:.85; min-width:26px; }
   .eat-step .svg-icon { width:26px; height:26px; margin:0; flex-shrink:0; }
   .eat-step p { font-size:15px; line-height:1.7; color:var(--ink-soft); word-break:keep-all; }
-  .menu-foot { text-align:center; font-size:13px; color:var(--ink-soft); opacity:.7; margin-top:38px; letter-spacing:.02em; }
+  .menu-foot { text-align:center; font-size:13px; color:var(--ink-soft); opacity:.7; margin-top:36px; letter-spacing:.02em; }
   @media (max-width:900px){
-    .dish-grid { grid-template-columns:1fr; max-width:420px; margin:0 auto; gap:16px; }
+    .cat-grid { grid-template-columns:1fr 1fr; gap:12px; }
+    .cat-body { padding:15px 15px 18px; }
+    .cat-name { font-size:16px; }
     .eat-groups { grid-template-columns:1fr; gap:40px; }
-    .price-row { flex-wrap:wrap; gap:6px 14px; }
-    .price-row .p-desc { flex-basis:100%; order:3; }
+    .side-row { flex-wrap:wrap; gap:6px 12px; } .side-row .s-desc { flex-basis:100%; order:3; }
   }
 </style>
 </head>
 <body>
 
-<header class="site-header on-light" id="siteHeader">
+<header class="site-header" id="siteHeader">
   <a class="logo" href="index.html" aria-label="인사동보리밥">
     <img class="logo-img logo-w" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
     <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
@@ -89,9 +87,8 @@
   </div>
 </div>
 
-<!-- ===== 히어로 ===== -->
-<section class="page-hero">
-  <img class="roofline" src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true">
+<!-- ===== 사진 히어로 ===== -->
+<section class="page-hero photo" style="--hero-bg:url('assets/img/hero-menu.jpg')">
   <p class="chapter">MENU</p>
   <h1>매일 줄 서서 먹는 밥상</h1>
   <p class="sub-en">A table worth the wait.</p>
@@ -104,27 +101,31 @@
     <h2 class="accent-underline">보리밥 정식</h2>
     <p class="menu-note">보리밥과 매일 정성껏 만든 8종 제철 나물·반찬이 기본으로 함께 나옵니다.</p>
   </div>
-  <div class="dish-grid">
-    <div class="dish-card">
-      <div class="dish-photo"><img src="assets/img/menu-jeyuk.jpg" alt="엄선 보리밥 인사동정식"></div>
-      <div class="dish-body"><span class="dish-name">엄선 보리밥 인사동정식</span><span class="dish-serve">대표 · 직화제육</span><span class="dish-price">14,900원</span></div>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-jeyuk.jpg" alt="엄선 보리밥 인사동정식"></div>
+      <div class="cat-body"><div class="cat-name">엄선 보리밥 인사동정식<span class="cat-serve">대표</span></div>
+        <p class="cat-desc">간장게장·양념게장·제육볶음·주꾸미숙회에 나물 6종과 보리밥, 된장찌개까지.</p><div class="cat-price">14,900원</div></div>
     </div>
-    <div class="dish-card">
-      <div class="dish-photo"><img src="assets/img/menu-bulgogi.jpg" alt="보리밥 직화불고기 정식"></div>
-      <div class="dish-body"><span class="dish-name">직화불고기 정식</span><span class="dish-serve">2인</span><span class="dish-price">16,000원</span></div>
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-bulgogi.jpg" alt="보리밥 직화불고기 정식"></div>
+      <div class="cat-body"><div class="cat-name">직화불고기 정식<span class="cat-serve">2인</span></div>
+        <p class="cat-desc">직화로 구워 불향을 입힌 감칠맛 깊은 돼지불고기 정식.</p><div class="cat-price">16,000원</div></div>
     </div>
-    <div class="dish-card">
-      <div class="dish-photo"><img src="assets/img/menu-bossam.jpg" alt="보리밥 삼겹수육 정식"></div>
-      <div class="dish-body"><span class="dish-name">삼겹수육 정식</span><span class="dish-serve">2인</span><span class="dish-price">18,000원</span></div>
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-suyuk.jpg" alt="보리밥 삼겹수육 정식"></div>
+      <div class="cat-body"><div class="cat-name">삼겹수육 정식<span class="cat-serve">2인</span></div>
+        <p class="cat-desc">잡내 없이 부드럽게 완성한 촉촉하고 쫄깃한 수육.</p><div class="cat-price">18,000원</div></div>
     </div>
-    <div class="dish-card">
-      <div class="dish-photo"><img src="assets/img/menu-jukkumi.jpg" alt="베스트 주꾸미 정식"></div>
-      <div class="dish-body"><span class="dish-name">베스트 주꾸미 정식</span><span class="dish-serve">2인</span><span class="dish-price">17,000원</span></div>
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-jukkumi.jpg" alt="베스트 주꾸미 정식"></div>
+      <div class="cat-body"><div class="cat-name">베스트 주꾸미 정식<span class="cat-serve">2인</span></div>
+        <p class="cat-desc">양념주꾸미볶음과 주꾸미숙회, 게장까지 함께 오르는 인기 정식.</p><div class="cat-price">17,000원</div></div>
     </div>
-    <!-- data-todo: 고등어구이 정식 전용 사진 없음 → 한 상 컷으로 대체 -->
-    <div class="dish-card">
-      <div class="dish-photo"><img src="assets/img/table-full.jpg" alt="정통 고등어구이 정식"></div>
-      <div class="dish-body"><span class="dish-name">정통 고등어구이 정식</span><span class="dish-serve">2인</span><span class="dish-price">17,000원</span></div>
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-godeungeo.jpg" alt="정통 고등어구이 정식"></div>
+      <div class="cat-body"><div class="cat-name">정통 고등어구이 정식<span class="cat-serve">2인</span></div>
+        <p class="cat-desc">엄선한 고등어구이와 신선한 게장의 맛있는 조화.</p><div class="cat-price">17,000원</div></div>
     </div>
   </div>
 </section>
@@ -137,21 +138,31 @@
     <p class="chapter">게장 · 곁들임</p>
     <h2 class="accent-underline">밥도둑, 그리고 별미</h2>
   </div>
-  <div class="dish-grid" style="grid-template-columns:repeat(2,1fr); max-width:760px; margin:0 auto clamp(30px,4vw,48px);">
-    <div class="dish-card">
-      <div class="dish-photo"><img src="assets/img/menu-gejang.jpg" alt="국내산 연평도 암꽃게 간장게장"></div>
-      <div class="dish-body"><span class="dish-name">연평도 암꽃게 간장게장</span><span class="dish-serve">국내산</span><span class="dish-price">39,000원</span></div>
+  <div class="cat-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-ganjang.jpg" alt="연평도 암꽃게 간장게장"></div>
+      <div class="cat-body"><div class="cat-name">연평도 간장게장</div>
+        <p class="cat-desc">연평도 암꽃게를 깊고 깔끔한 간장에 숙성한 명품게장.</p><div class="cat-price">39,000원</div></div>
     </div>
-    <div class="dish-card">
-      <div class="dish-photo"><img src="assets/img/menu-yangnyeom-gejang.jpg" alt="국내산 명품 양념게장"></div>
-      <div class="dish-body"><span class="dish-name">국내산 명품 양념게장</span><span class="dish-serve">국내산</span><span class="dish-price">25,000원</span></div>
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-yangnyeom.jpg" alt="국내산 명품 양념게장"></div>
+      <div class="cat-body"><div class="cat-name">명품 양념게장</div>
+        <p class="cat-desc">매콤달콤 숙성시킨 깊고 진한 국내산 양념게장.</p><div class="cat-price">25,000원</div></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-jukkumi.jpg" alt="직화 프리미엄 주꾸미볶음"></div>
+      <div class="cat-body"><div class="cat-name">직화 주꾸미볶음</div>
+        <p class="cat-desc">불향 가득 매콤한 양념의 프리미엄 주꾸미볶음.</p><div class="cat-price">20,000원</div></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-photo"><img src="assets/img/big-sukhoe.jpg" alt="정통 주꾸미 숙회"></div>
+      <div class="cat-body"><div class="cat-name">정통 주꾸미 숙회</div>
+        <p class="cat-desc">쪽파·부추와 고소하게 무쳐낸 제철 별미.</p><div class="cat-price">20,000원</div></div>
     </div>
   </div>
-  <div class="price-list">
-    <div class="price-row"><span class="p-name">직화 프리미엄 주꾸미볶음</span><span class="p-desc">불향 가득 매콤한 양념</span><span class="p-won">20,000원</span></div>
-    <div class="price-row"><span class="p-name">정통 주꾸미 숙회</span><span class="p-desc">쪽파·부추와 고소하게 무쳐낸 제철 별미</span><span class="p-won">20,000원</span></div>
-    <div class="price-row"><span class="p-name">소고기 육전</span><span class="p-desc">얇게 저며 계란옷 입혀 부쳐낸 전통 육전</span><span class="p-won">12,000원</span></div>
-    <div class="price-row"><span class="p-name">정통 고등어구이</span><span class="p-desc">직화로 바삭하게 구운 담백한 별미</span><span class="p-won">12,000원</span></div>
+  <div class="side-list">
+    <div class="side-row"><span class="s-name">소고기 육전</span><span class="s-desc">얇게 저며 계란옷 입혀 부쳐낸 전통 육전</span><span class="s-won">12,000원</span></div>
+    <div class="side-row"><span class="s-name">정통 고등어구이</span><span class="s-desc">직화로 바삭하게 구운 담백한 단품 별미</span><span class="s-won">12,000원</span></div>
   </div>
 </section>
 
@@ -198,18 +209,13 @@
 
 <script>
 (function () {
-  const btn = document.getElementById('navToggle');
-  const nav = document.getElementById('mNav');
-  if (!btn || !nav) return;
-  function setOpen(open) {
-    nav.classList.toggle('open', open);
-    btn.classList.toggle('is-open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    nav.setAttribute('aria-hidden', open ? 'false' : 'true');
-    document.body.classList.toggle('m-open', open);
-  }
-  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
-  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  var h=document.getElementById('siteHeader');
+  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.52); }
+  window.addEventListener('scroll', s, {passive:true}); s();
+  var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
+  function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }
+  btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
 })();
 </script>
 </body>

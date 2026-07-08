@@ -23,7 +23,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+html { scroll-snap-type: y proximity; scroll-behavior: smooth; }
 body {
   font-family: var(--sans);
   color: var(--ink);
@@ -314,12 +314,12 @@ a { color: inherit; text-decoration: none; }
 }
 .ing-copy {
   text-align: center;
-  padding: 128px 24px 52px;
+  padding: 100px 24px 44px;
 }
 .ing-copy .body-copy { max-width: 560px; margin: 0 auto; }
 /* 재료 스트립 — 오프셋 에디토리얼 + 호버 확장 */
 .ing-strip {
-  height: 54svh;
+  height: 52svh;
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -414,22 +414,11 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 /* "4게의 약속" — 게 pun 강조: 위·아래 스타카토(방점) */
+/* "게" — 빨강 강조만 (crab pun), 스타카토 점 제거 */
 .promises .ge {
-  position: relative;
   display: inline-block;
   color: var(--seal-red);
   margin: 0 .02em;
-}
-/* 스타카토 점 — "게" 위에 빨강 ···, 제목+1~4 키워드 통일 (em으로 크기 비례) */
-.promises .ge::before {
-  content: '';
-  position: absolute;
-  left: 50%; top: -.42em;
-  transform: translateX(-50%);
-  width: .11em; height: .11em;
-  border-radius: 50%;
-  background: var(--seal-red);
-  box-shadow: -.24em 0 var(--seal-red), .24em 0 var(--seal-red);
 }
 .promise-grid {
   counter-reset: promise;
@@ -546,7 +535,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 96px clamp(48px, 6vw, 92px);
+  padding: 74px clamp(48px, 6vw, 92px);
 }
 .menu-list { list-style: none; margin: 26px 0 4px; }
 .menu-list li {

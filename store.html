@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>매장 · 인사동보리밥</title>
+<meta name="description" content="인사동보리밥 본점 오시는 길. 서울 종로구 인사동 7길 37, 지하 1층. HACCP 인증 제조사 그래이츠가 만드는 정갈한 한 상.">
+<!-- Open Graph / 공유 카드 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="인사동보리밥">
+<meta property="og:title" content="매장 · 인사동보리밥">
+<meta property="og:description" content="인사동 7길 지하 한 켠. 오시는 길·영업시간 안내.">
+<meta property="og:image" content="https://vdirectors00-blip.github.io/insadong-boribap-homepage/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://vdirectors00-blip.github.io/insadong-boribap-homepage/store.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="매장 · 인사동보리밥">
+<meta name="twitter:description" content="인사동 7길 지하 한 켠. 오시는 길·영업시간 안내.">
+<meta name="twitter:image" content="https://vdirectors00-blip.github.io/insadong-boribap-homepage/assets/img/og-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/fonts-archive/AritaBuri/AritaBuri.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+<style>
+  .map-wrap { position:relative; width:100%; max-width:960px; margin:0 auto; aspect-ratio:16/9; border-radius:8px; overflow:hidden; border:1px solid rgba(42,39,36,.12); box-shadow:0 18px 44px -30px rgba(40,26,14,.5); }
+  .map-wrap iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .map-actions { text-align:center; margin-top:26px; }
+  .info-dl { max-width:680px; margin:clamp(40px,6vw,64px) auto 0; }
+  .info-row { display:flex; align-items:flex-start; gap:18px; padding:22px 4px; border-top:1px solid rgba(42,39,36,.13); }
+  .info-row:last-child { border-bottom:1px solid rgba(42,39,36,.13); }
+  .info-row .svg-icon { width:24px; height:24px; margin:2px 0 0; flex-shrink:0; opacity:.85; stroke:var(--ink); stroke-width:1.5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .info-row .k { font-family:var(--serif); font-size:15px; letter-spacing:.06em; color:var(--seal-red); opacity:.9; min-width:78px; }
+  .info-row .v { font-size:16px; line-height:1.7; color:var(--ink); word-break:keep-all; }
+  .info-row .v small { display:block; font-size:13.5px; color:var(--ink-soft); margin-top:4px; }
+  .directions { max-width:680px; margin:clamp(28px,4vw,40px) auto 0; display:flex; align-items:center; gap:14px; justify-content:center; text-align:center; }
+  .directions .svg-icon { width:26px; height:26px; margin:0; stroke:var(--ink); stroke-width:1.5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .directions p { font-size:15.5px; line-height:1.7; color:var(--ink-soft); word-break:keep-all; }
+  @media (max-width:900px){ .info-row .k { min-width:64px; } }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <a class="logo" href="index.html" aria-label="인사동보리밥">
+    <img class="logo-img logo-w" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
+    <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
+  </a>
+  <nav class="gnb" aria-label="주 메뉴">
+    <a href="brand.html">브랜드</a><a href="menu.html">메뉴</a><a href="store.html" aria-current="page">매장</a><a href="franchise.html">창업안내</a>
+    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  </nav>
+  <div class="header-utils">
+    <a class="lang active" href="#" aria-current="true">KOR</a><span class="lang-sep" aria-hidden="true"></span><a class="lang" href="#" title="English 준비중">ENG</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴" aria-expanded="false" aria-controls="mNav"><span></span><span></span><span></span></button>
+</header>
+
+<div class="m-nav" id="mNav" aria-hidden="true">
+  <a href="brand.html">브랜드</a><a href="menu.html">메뉴</a><a href="store.html">매장</a><a href="franchise.html">창업안내</a>
+  <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  <div class="m-nav-lang"><a class="lang active" href="#">KOR</a><span class="lang-sep" aria-hidden="true"></span><a class="lang" href="#" title="English 준비중">ENG</a></div>
+</div>
+
+<!-- ===== 상단 배너 (매장 한옥) ===== -->
+<section class="top-banner">
+  <img src="assets/img/store-hall.jpg" alt="인사동보리밥 매장 홀 전경">
+  <div class="tb-inner">
+    <span class="en">STORE</span>
+    <h1>인사동 7길, 지하 한 켠</h1>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</section>
+
+<!-- ===== 블록 1: 공간 ===== -->
+<div class="cblock">
+  <div class="cblock-text">
+    <span class="en">THE SPACE</span>
+    <h2>골목 안, 정겨운 한 자리</h2>
+    <p class="lead">화려함보다는 정겨움을 담은 공간입니다. 인사동 골목 지하 한 켠, 매일 줄 서서 드시는 정갈한 한 상을 차려냅니다. 바쁜 하루에 잠시 쉬어가시길 바랍니다.</p>
+  </div>
+  <div class="cblock-photo"><img src="assets/img/store-hall2.jpg" alt="인사동보리밥 매장 홀"></div>
+</div>
+
+<!-- ===== 블록 2: 제조/인증 ===== -->
+<div class="cblock reverse">
+  <div class="cblock-text">
+    <span class="en">MANUFACTURING</span>
+    <h2>HACCP 인증<br class="br-d"> 제조사가 만듭니다</h2>
+    <p class="lead">매장에 오르는 게장과 양념은 제조 전문 회사 그래이츠의 HACCP 인증 자체 공장에서 만들어집니다. 철저한 위생 관리와 표준화된 공정으로, 매장에서도 늘 같은 맛을 지킵니다.</p>
+  </div>
+  <div class="cblock-photo"><img src="assets/img/factory-1.jpg" alt="HACCP 인증 위생 시설"></div>
+</div>
+
+<div class="roof-div"><img src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true"></div>
+
+<!-- ===== 지도 · 매장 정보 ===== -->
+<section class="page-section" style="padding-top:0;">
+  <div class="section-head">
+    <p class="chapter">MAP</p>
+    <h2 class="accent-underline">오시는 길</h2>
+  </div>
+  <div class="map-wrap">
+    <iframe src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EC%A2%85%EB%A1%9C%EA%B5%AC%20%EC%9D%B8%EC%82%AC%EB%8F%99%207%EA%B8%B8%2037&output=embed" title="인사동보리밥 본점 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <div class="map-actions">
+    <a class="btn-outline dark slim" href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 지도에서 보기</a>
+  </div>
+  <div class="info-dl">
+    <div class="info-row">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.4-5.4 9.2-7.3 10.7a1 1 0 0 1-1.4 0C9.4 19.2 4 14.4 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="k">주소</span><span class="v">서울 종로구 인사동 7길 37, 지하 1층</span>
+    </div>
+    <div class="info-row">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span class="k">영업시간</span><span class="v">월–토 11:00 – 20:30<small>라스트오더 20:00 · 브레이크타임 15:00 – 17:00</small></span>
+    </div>
+    <div class="info-row">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg>
+      <span class="k">휴무</span><span class="v">매주 일요일 정기 휴무</span>
+    </div>
+    <div class="info-row">
+      <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.83 19.94a17.6 17.6 0 0 1-7.72-4.05 17.6 17.6 0 0 1-4.05-7.72 2 2 0 0 1 1.11-2.28l2.2-.92a2 2 0 0 1 2.5.9l.86 1.72a2 2 0 0 1-.3 2.28l-.7.7a13 13 0 0 0 4.55 4.55l.7-.7a2 2 0 0 1 2.28-.3l1.72.86a2 2 0 0 1 .9 2.5l-.92 2.2a2 2 0 0 1-2.28 1.11z"/></svg>
+      <span class="k">전화</span><span class="v"><a href="tel:0507-1327-6088" style="color:inherit;">0507-1327-6088</a></span>
+    </div>
+  </div>
+  <div class="directions">
+    <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="m8 19-2 3"/><path d="m18 22-2-3"/><circle cx="8.5" cy="15.5" r="1"/><circle cx="15.5" cy="15.5" r="1"/></svg>
+    <p>종각역·안국역에서 도보로 오실 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band">
+  <p class="chapter">VISIT</p>
+  <h2>미리 연락 주시면<br class="br-m"> 편하게 준비해 드립니다</h2>
+  <a class="btn-outline dark" href="tel:0507-1327-6088">전화로 문의하기</a>
+  <span class="seal" aria-hidden="true"></span>
+</section>
+
+<footer class="site-footer">
+  <img class="f-logo-img" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
+  <p class="f-info">주식회사 그래이츠 &nbsp;|&nbsp; <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">네이버 스마트스토어</a> &nbsp;|&nbsp; <a href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 플레이스</a></p>
+  <p class="f-copy">© 2026 GREATS. All rights reserved.</p>
+</footer>
+
+<script>
+(function () {
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.addEventListener('pageshow', function(){ window.scrollTo(0,0); });
+  var h=document.getElementById('siteHeader');
+  function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.85); }
+  window.addEventListener('scroll', sc, {passive:true}); sc();
+  var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
+  function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }
+  btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+})();
+</script>
+</body>
+</html>

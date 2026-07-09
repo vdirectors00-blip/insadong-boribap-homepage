@@ -1,29 +1,414 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>인사동보리밥 · 따뜻한 밥 한 그릇</title>
 <meta name="description" content="정성과 시간으로 담아낸 정갈한 한 끼, 인사동보리밥. 인사동 본점의 정갈한 보리밥 정식과 국내산 연평도 암꽃게 간장게장.">
-
-<!-- Open Graph / 카카오·페북 공유 카드 -->
+<!-- Open Graph / 공유 카드 -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="인사동보리밥">
 <meta property="og:title" content="인사동보리밥 · 따뜻한 밥 한 그릇">
 <meta property="og:description" content="정성과 시간으로 담아낸 정갈한 한 끼. 인사동 본점의 보리밥 정식과 국내산 연평도 암꽃게 간장게장.">
-<meta property="og:image" content="https://vdirectors00-blip.github.io/insadong-boribap-homepage/site/assets/img/og-cover.jpg">
+<meta property="og:image" content="https://vdirectors00-blip.github.io/insadong-boribap-homepage/assets/img/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://vdirectors00-blip.github.io/insadong-boribap-homepage/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="인사동보리밥 · 따뜻한 밥 한 그릇">
 <meta name="twitter:description" content="정성과 시간으로 담아낸 정갈한 한 끼. 인사동 본점의 보리밥 정식과 국내산 연평도 암꽃게 간장게장.">
-<meta name="twitter:image" content="https://vdirectors00-blip.github.io/insadong-boribap-homepage/site/assets/img/og-cover.jpg">
-
-<meta http-equiv="refresh" content="0; url=./site/">
-<link rel="canonical" href="./site/">
+<meta name="twitter:image" content="https://vdirectors00-blip.github.io/insadong-boribap-homepage/assets/img/og-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- 헤드라인: 아리따부리 (아모레퍼시픽) — fonts-archive CDN -->
+<link href="https://cdn.jsdelivr.net/gh/fonts-archive/AritaBuri/AritaBuri.css" rel="stylesheet">
+<!-- 영문 전용 후보: 핸드크래프트 세리프 -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Spectral:wght@400;500&family=EB+Garamond:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<!-- 한자 넘버링 후보 -->
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+TC:wght@400;500;600&family=Ma+Shan+Zheng&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<p>이동 중… <a href="./site/">인사동보리밥 홈페이지로 이동</a></p>
+
+<!-- ===== 헤더 ===== -->
+<header class="site-header" id="siteHeader">
+  <a class="logo" href="#hero" aria-label="인사동보리밥">
+    <img class="logo-img logo-w" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
+    <img class="logo-img logo-k" src="assets/img/logo-ink.png" alt="" aria-hidden="true">
+  </a>
+  <nav class="gnb" aria-label="주 메뉴">
+    <a href="brand.html">브랜드</a>
+    <a href="menu.html">메뉴</a>
+    <a href="store.html">매장</a>
+    <a href="franchise.html">창업안내</a>
+    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  </nav>
+  <div class="header-utils">
+    <a class="lang active" href="#" aria-current="true">KOR</a>
+    <span class="lang-sep" aria-hidden="true"></span>
+    <a class="lang" href="#" title="English 준비중">ENG</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="메뉴" aria-expanded="false" aria-controls="mNav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- 모바일 전체화면 메뉴 -->
+<div class="m-nav" id="mNav" aria-hidden="true">
+  <a href="brand.html">브랜드</a>
+  <a href="menu.html">메뉴</a>
+  <a href="store.html">매장</a>
+  <a href="franchise.html">창업안내</a>
+  <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">구매하기</a>
+  <div class="m-nav-lang">
+    <a class="lang active" href="#">KOR</a>
+    <span class="lang-sep" aria-hidden="true"></span>
+    <a class="lang" href="#" title="English 준비중">ENG</a>
+  </div>
+</div>
+
+<!-- ===== 우측 도트 네비 ===== -->
+<nav class="dot-nav" aria-label="섹션 이동">
+  <a href="#hero"    title="인사동보리밥"></a>
+  <a href="#story-1" title="이야기 하나 · 인사동 보리밥"></a>
+  <a href="#story-2" title="이야기 둘 · 매일 직접, 정성껏"></a>
+  <a href="#story-3" title="이야기 셋 · 재료의 진심"></a>
+  <a href="#story-4" title="이야기 넷 · 네 가지 약속"></a>
+  <a href="#table"   title="밥상"></a>
+  <a href="#space"   title="공간"></a>
+  <a href="#invite"  title="초대"></a>
+</nav>
+
+<main class="snap-container">
+
+  <!-- ===== S1. 히어로 ===== -->
+  <section class="panel hero" id="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-poster.jpg" aria-hidden="true"
+           data-desktop="assets/video/hero-montage.mp4" data-mobile="assets/video/hero-montage-mobile.mp4"></video>
+    <div class="panel-inner center light">
+      <p class="eyebrow">INSADONG BORIBAP</p>
+      <h1 class="headline">
+        정성과 시간으로 <br class="br-m">담아낸 <br class="br-d">정갈한 한 끼, <br class="br-m">인사동보리밥
+      </h1>
+      <p class="sub-en">Crafted with time and care.</p>
+      <a class="btn-outline" href="#story-1">우리의 이야기</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ===== S2. 이야기 하나 — 인사동 보리밥 ===== -->
+  <section class="panel split" id="story-1">
+    <div class="split-photo">
+      <img src="assets/img/story-boribap.jpg" alt="보리밥 한 그릇과 나물 찬">
+    </div>
+    <div class="split-copy hanji">
+      <p class="chapter">이야기 하나</p>
+      <h2 class="h-headline">인사동 보리밥<span class="red">,</span></h2>
+      <p class="sub-en-s">The comfort of a humble bowl.</p>
+      <p class="body-copy">
+        따뜻한 밥 한 그릇에 위로받을 수 있는 곳.<br class="br-d">
+        어느 날 점심, 소박한 보리밥 한 그릇이<br class="br-d">
+        마음까지 든든하게 바꿔드릴 수 있기를 바랍니다.
+      </p>
+      <span class="seal" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <!-- ===== S3. 이야기 둘 — 매일 직접, 정성껏 ===== -->
+  <section class="panel split reverse" id="story-2">
+    <div class="split-copy hanji">
+      <p class="chapter">이야기 둘</p>
+      <h2 class="h-headline">매일 직접<span class="red">,</span> 정성껏</h2>
+      <p class="sub-en-s">Made by hand, with care.</p>
+      <p class="body-copy">
+        식탁에 오르는 모든 음식은<br class="br-d">
+        하나하나 우리 손으로 직접 만듭니다.<br class="br-d">
+        부담 없고 속이 편안한 한 끼를 위해<br class="br-d">
+        재료 손질부터 양념 하나까지<br class="br-d">
+        정성과 믿음을 담아 대접합니다.
+      </p>
+      <span class="seal" aria-hidden="true"></span>
+    </div>
+    <div class="split-photo">
+      <img src="assets/img/story-hands.jpg" alt="놋그릇에 참기름을 두르는 손">
+    </div>
+  </section>
+
+  <!-- ===== S4. 이야기 셋 — 재료의 진심 (4단 재료 조합) ===== -->
+  <section class="panel ingredients" id="story-3">
+    <div class="ing-copy">
+      <p class="chapter">이야기 셋</p>
+      <h2 class="h-headline">재료의 진심</h2>
+      <p class="sub-en-s">Honesty in every ingredient.</p>
+      <p class="body-copy">
+        깨끗하게 손질한 연평도 암꽃게부터 직접 짠 통깨 참기름까지<br class="br-d">
+        맛은 흉내 낼 수 있지만, 진짜는 다릅니다.
+      </p>
+    </div>
+    <div class="ing-strip">
+      <figure>
+        <img src="assets/img/ing-gejang.jpg" alt="속이 꽉 찬 간장게장">
+        <figcaption>
+          <span class="ing-name">속이 꽉 찬<br>국내산 연평도 암꽃게</span>
+          <span class="ing-desc">서해 연평도 암꽃게만 골라, 알이 꽉 찬 제철에 정성껏 담급니다.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/ing-barley.jpg" alt="국내산 보리">
+        <figcaption>
+          <span class="ing-name">매일 새로 짓는<br>국내산 보리밥</span>
+          <span class="ing-desc">매일 아침 새로 지어, 구수하게 올리는 국내산 보리밥.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/story-jang.jpg" alt="직접 담근 고추장" class="pos-bottom">
+        <figcaption>
+          <span class="ing-name">직접 담근<br>양념과 장</span>
+          <span class="ing-desc">직접 담근 장으로만 내는, 깊고 진한 감칠맛.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/ing-chamgireum.jpg" alt="황학동 통참깨로 짠 참기름">
+        <figcaption>
+          <span class="ing-name">고소함 가득<br>황학동 통참깨 참기름</span>
+          <span class="ing-desc">황학동 통참깨를 그날그날 짜낸, 고소함 가득한 참기름.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== S5. 이야기 넷 — 네 가지 약속 ===== -->
+  <section class="panel promises" id="story-4">
+    <div class="panel-inner center">
+      <img class="roofline" src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true">
+      <p class="chapter">이야기 넷</p>
+      <h2 class="h-headline promise-title">4<span class="ge">게</span>의 약속</h2>
+      <p class="sub-en-s">The four promises we keep.</p>
+      <ul class="promise-grid">
+        <li>
+          <div class="p-photo"><img src="assets/img/promise-1.jpg" alt="국내산 재료를 직접 손질하는 손"></div>
+          <div class="p-body">
+            <span class="p-num">첫 번째 약속</span>
+            <h3>깐깐하<span class="ge">게</span></h3>
+            <p>국내산 재료를 골라<br>매일 직접 손질합니다</p>
+          </div>
+        </li>
+        <li>
+          <div class="p-photo"><img src="assets/img/promise-2.jpg" alt="푸짐한 보리밥 한 상"></div>
+          <div class="p-body">
+            <span class="p-num">두 번째 약속</span>
+            <h3>든든하<span class="ge">게</span></h3>
+            <p>부담 없이 속이 편안한<br>한 끼를 차립니다</p>
+          </div>
+        </li>
+        <li>
+          <div class="p-photo"><img src="assets/img/promise-3.jpg" alt="붉게 무친 양념게장"></div>
+          <div class="p-body">
+            <span class="p-num">세 번째 약속</span>
+            <h3>감칠맛나<span class="ge">게</span></h3>
+            <p>지나치지 않은 양념으로<br>본연의 풍미를 살립니다</p>
+          </div>
+        </li>
+        <li>
+          <div class="p-photo"><img src="assets/img/promise-4.jpg" alt="불판에 지글지글 익는 고기"></div>
+          <div class="p-body">
+            <span class="p-num">네 번째 약속</span>
+            <h3>불맛나<span class="ge">게</span></h3>
+            <p>마지막엔 불향을 입혀<br>그 맛을 완성합니다</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== S6. 밥상 (좌 대표 대형 + 우 메뉴 리스트) ===== -->
+  <section class="panel table-sec" id="table">
+    <div class="table-feature">
+      <img id="featureImg" src="assets/img/menu-gejang.jpg" alt="간장게장">
+      <div class="feature-cap">
+        <span class="feature-badge" id="featureBadge">SIGNATURE</span>
+        <h3 id="featureTitle">간장게장</h3>
+        <p id="featureDesc">국내산 연평도 암꽃게로 담근 밥도둑</p>
+      </div>
+    </div>
+    <div class="table-list">
+      <p class="chapter">밥상</p>
+      <h2 class="h-headline">매일 줄 서서 먹는 밥상</h2>
+      <p class="sub-en-s">A table worth the wait.</p>
+      <ul class="menu-list">
+        <li class="active" data-img="assets/img/menu-gejang.jpg" data-title="간장게장" data-desc="국내산 연평도 암꽃게로 담근 밥도둑" data-badge="SIGNATURE">
+          <img src="assets/img/menu-gejang.jpg" alt="간장게장">
+          <div class="ml-text">
+            <h4>간장게장</h4>
+            <p>국내산 연평도 암꽃게로 담근 밥도둑</p>
+          </div>
+        </li>
+        <li data-img="assets/img/menu-jeyuk.jpg" data-title="보리밥 직화제육 정식" data-desc="불향 가득, 인사동 대표 보리밥 정식 차림" data-badge="대표 정식">
+          <img src="assets/img/menu-jeyuk.jpg" alt="보리밥 직화제육 정식">
+          <div class="ml-text">
+            <h4>보리밥 직화제육 정식</h4>
+            <p>불향 가득, 인사동 대표 보리밥 정식 차림</p>
+          </div>
+        </li>
+        <li data-img="assets/img/menu-yangnyeom-gejang.jpg" data-title="국내산 양념게장" data-desc="매콤달콤 중독성 강한 국내산 게장" data-badge="">
+          <img src="assets/img/menu-yangnyeom-gejang.jpg" alt="국내산 양념게장">
+          <div class="ml-text">
+            <h4>국내산 양념게장</h4>
+            <p>매콤달콤 중독성 강한 국내산 게장</p>
+          </div>
+        </li>
+        <li data-img="assets/img/menu-jukkumi.jpg" data-title="직화 주꾸미" data-desc="불향 가득 쫄깃한 직화 주꾸미" data-badge="">
+          <img src="assets/img/menu-jukkumi.jpg" alt="직화 주꾸미">
+          <div class="ml-text">
+            <h4>직화 주꾸미</h4>
+            <p>불향 가득 쫄깃한 직화 주꾸미</p>
+          </div>
+        </li>
+      </ul>
+      <a class="btn-outline dark slim" href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">전체 메뉴 · 온라인으로 만나기</a>
+    </div>
+  </section>
+
+  <!-- ===== S7. 공간 ===== -->
+  <section class="panel full-photo" id="space">
+    <div class="full-bg jeongsung" role="img" aria-label="정갈하게 차려지는 한 상"></div>
+    <div class="panel-inner center light">
+      <p class="chapter light">공간</p>
+      <h2 class="h-headline">따뜻한<span class="red">,</span> 한 끼</h2>
+      <p class="sub-en-s">A place of warmth in Insadong.</p>
+      <p class="body-copy wide">
+        음식이 전하는 온기와 정직함.<br class="br-d">
+        단순한 식사가 아닌, 하루를 위로하고 채우는<br class="br-d">
+        한 끼가 되도록 마음을 담습니다.
+      </p>
+      <div class="place-card">
+        <p class="place-name">인사동보리밥 본점</p>
+        <p class="place-addr">서울 종로구 인사동 7길 37, 지하 1층 · 종각역 도보</p>
+        <a class="btn-outline" href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 지도에서 보기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S8. 초대 + 푸터 ===== -->
+  <section class="panel invite" id="invite">
+    <div class="panel-inner center light">
+      <p class="chapter light">초대</p>
+      <h2 class="h-headline">같은 길을 <br class="br-d"><br class="br-m">함께 걸어가실 <br class="br-m">분을 찾습니다</h2>
+      <p class="sub-en-s">Walk this road with us.</p>
+      <p class="body-copy wide dim">
+        HACCP 인증 자체 공장 &nbsp;·&nbsp; 식재부터 양념·소스까지 직접 생산<br>
+        홍콩·미국 수출 &nbsp;·&nbsp; 인사동 본점에서 검증된 맛
+      </p>
+      <a class="btn-outline" href="franchise.html">창업 문의</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 푸터 (스냅·도트 네비 제외) ===== -->
+<footer class="site-footer">
+  <img class="f-logo-img" src="assets/img/logo-white.png" alt="인사동보리밥 INSADONG BORIBAP">
+  <p class="f-info">
+    주식회사 그래이츠 &nbsp;|&nbsp;
+    <a href="https://smartstore.naver.com/greatsfb" target="_blank" rel="noopener">네이버 스마트스토어</a> &nbsp;|&nbsp;
+    <a href="https://naver.me/5b0AiKjp" target="_blank" rel="noopener">네이버 플레이스</a>
+  </p>
+  <p class="f-copy">© 2026 GREATS. All rights reserved.</p>
+</footer>
+
+<script>
+// 히어로 배경 영상: 화면폭에 따라 PC 고화질(43MB)/모바일 경량(12MB) 소스 선택
+(function () {
+  const v = document.querySelector('.hero-video');
+  if (!v) return;
+  v.src = window.matchMedia('(max-width: 900px)').matches ? v.dataset.mobile : v.dataset.desktop;
+  v.load();
+  v.play().catch(function () {});
+})();
+
+// 스크롤스파이: 도트 활성화 + 밝은 섹션에서 헤더 색 반전 (애니메이션 아님, 상태 표시용)
+const sections = document.querySelectorAll('.panel');
+const dots = document.querySelectorAll('.dot-nav a');
+const header = document.getElementById('siteHeader');
+const lightSections = new Set(['story-1', 'story-2', 'story-3', 'story-4', 'table']);
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const idx = [...sections].indexOf(e.target);
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    header.classList.toggle('on-light', lightSections.has(e.target.id));
+  });
+}, { threshold: 0.6 });
+sections.forEach(s => io.observe(s));
+
+// S6 밥상: 메뉴 항목 클릭 → 왼쪽 대표컷 교체·고정 (기본 = 첫 항목 선택)
+(function () {
+  const img = document.getElementById('featureImg');
+  const ttl = document.getElementById('featureTitle');
+  const dsc = document.getElementById('featureDesc');
+  const bdg = document.getElementById('featureBadge');
+  const items = document.querySelectorAll('.menu-list li');
+  if (!img || !items.length) return;
+  let t;
+  function select(li) {
+    if (li.classList.contains('active')) return;
+    items.forEach(function (x) { x.classList.remove('active'); });
+    li.classList.add('active');
+    // 모바일: 대표컷이 위에 있으므로 탭 시 대표컷으로 스크롤(반응이 화면에 보이게)
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      const feat = document.querySelector('.table-feature');
+      if (feat) feat.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    img.style.opacity = 0;
+    clearTimeout(t);
+    t = setTimeout(function () {
+      img.src = li.dataset.img; img.alt = li.dataset.title;
+      ttl.textContent = li.dataset.title; dsc.textContent = li.dataset.desc;
+      if (li.dataset.badge) { bdg.textContent = li.dataset.badge; bdg.style.display = ''; }
+      else { bdg.style.display = 'none'; }
+      img.style.opacity = 1;
+    }, 150);
+  }
+  items.forEach(function (li) { li.addEventListener('click', function () { select(li); }); });
+})();
+
+// 모바일 햄버거 메뉴 토글
+(function () {
+  const btn = document.getElementById('navToggle');
+  const nav = document.getElementById('mNav');
+  if (!btn || !nav) return;
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.classList.toggle('m-open', open);
+  }
+  btn.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+})();
+
+// 스크롤 진입 시 페이드업 (절제된 등장 모션)
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  const sel = '.chapter, .eyebrow, .h-headline, .headline, .sub-en, .sub-en-s, .body-copy, .v-head-wrap, .place-card, .feature-cap, .promise-grid, .ing-strip, .menu-list, .btn-outline';
+  document.querySelectorAll('.panel').forEach(function (panel) {
+    panel.querySelectorAll(sel).forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i * 0.07) + 's';
+    });
+  });
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+})();
+</script>
 </body>
 </html>

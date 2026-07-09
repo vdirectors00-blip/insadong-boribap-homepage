@@ -65,7 +65,7 @@
   <div class="section-head">
     <p class="chapter">CONTACT</p>
     <h2 class="accent-underline">창업 문의</h2>
-    <p class="section-lead">인사동보리밥은 HACCP 인증 제조사 그래이츠가 직접 운영하는 한식 브랜드입니다. 검증된 맛과 표준화된 공정으로, 함께 걸어가실 첫 파트너를 찾습니다. 아래로 문의 주시면 담당자가 상세히 안내해 드립니다.</p>
+    <p class="section-lead">맛은 본사가 책임집니다. 인사동에서 이미 검증된 한 상을 함께 차려나갈 첫 분을 찾습니다. 아래로 문의 주시면 담당자가 자세히 안내해 드립니다.</p>
   </div>
   <form class="inquiry-form" action="#" method="post" data-todo="폼 수신 이메일/백엔드 연결 필요 — 현재 미동작">
     <div class="row-2">
@@ -92,6 +92,8 @@
 
 <script>
 (function () {
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.addEventListener('pageshow', function(){ window.scrollTo(0,0); });
   var h=document.getElementById('siteHeader');
   function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.46); }
   window.addEventListener('scroll', sc, {passive:true}); sc();

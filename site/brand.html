@@ -50,7 +50,7 @@
   <img src="assets/img/origin-barley.jpg" alt="국내산 보리밭">
   <div class="tb-inner">
     <span class="en">BRAND</span>
-    <h1>좋은 재료를 아는 브랜드</h1>
+    <h1>좋은 재료를 아는 사람의 밥상</h1>
   </div>
 </section>
 
@@ -59,7 +59,7 @@
   <div class="cblock-text">
     <span class="en">MADE, NOT JUST SERVED</span>
     <h2>식당이 아니라,<br class="br-d"> 만드는 브랜드입니다</h2>
-    <p class="lead">인사동보리밥의 맛은 제조 전문 회사 그래이츠에서 완성됩니다. 재료를 고르는 일부터 게장·양념·소스까지, HACCP 인증 자체 공장에서 우리 손으로 직접 만듭니다. 그래서 어느 상에서나 같은 맛을 냅니다.</p>
+    <p class="lead">인사동보리밥은 제조 전문 회사 그래이츠가 만듭니다. 게장도, 양념도, 소스도 HACCP 인증 공장에서 우리 손으로 담급니다. 좋은 재료를 아는 사람이 직접 만들어야 그 맛이 한결같다고 믿습니다.</p>
     <span class="seal" aria-hidden="true"></span>
   </div>
   <div class="cblock-photo"><img src="assets/img/factory-1.jpg" alt="HACCP 인증 자체 공장"></div>
@@ -70,17 +70,33 @@
   <div class="cblock-text">
     <span class="en">FROM THE ROOTS</span>
     <h2>재료는 뿌리부터<br class="br-d"> 다릅니다</h2>
-    <p class="lead">국내산 보리는 들녘에서, 알이 꽉 찬 암꽃게는 서해 연평도에서 옵니다. 매일 새로 짓는 보리밥과 직접 담근 게장, 손질한 나물이 한 상에 오릅니다. 흉내는 낼 수 있어도, 진짜는 다릅니다.</p>
+    <p class="lead">보리는 들녘에서, 게는 서해 연평도에서 옵니다. 알이 꽉 찬 암꽃게만 골라 직접 만든 소스에 담그고, 국내산 보리는 매일 새로 짓습니다. 맛은 흉내 낼 수 있어도, 진짜는 다릅니다.</p>
   </div>
   <div class="cblock-photo"><img src="assets/img/origin-sea.jpg" alt="서해 연평도 조업 바다"></div>
 </div>
 
-<div class="roof-div"><img src="assets/img/deco-roofline-ink.png" alt="" aria-hidden="true"></div>
+<!-- ===== 보리 라인아트 모티프 ===== -->
+<div class="motif-div" aria-hidden="true">
+  <svg viewBox="0 0 80 132" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 130 C40 104 40 82 40 58"/>
+    <path d="M40 58 C40 36 40 20 40 8"/>
+    <path d="M40 30 C34 20 30 14 26 8"/>
+    <path d="M40 30 C46 20 50 14 54 8"/>
+    <path d="M40 42 C33 34 28 29 23 24"/>
+    <path d="M40 42 C47 34 52 29 57 24"/>
+    <path d="M40 68 C31 66 24 60 22 52 C31 53 37 59 40 68Z"/>
+    <path d="M40 68 C49 66 56 60 58 52 C49 53 43 59 40 68Z"/>
+    <path d="M40 84 C31 82 24 76 22 68 C31 69 37 75 40 84Z"/>
+    <path d="M40 84 C49 82 56 76 58 68 C49 69 43 75 40 84Z"/>
+    <path d="M40 100 C31 98 24 92 22 84 C31 85 37 91 40 100Z"/>
+    <path d="M40 100 C49 98 56 92 58 84 C49 85 43 91 40 100Z"/>
+  </svg>
+</div>
 
 <!-- ===== 대표 인사말 (placeholder) ===== -->
 <div class="text-block" data-todo="대표 인사말 원문·성함 확보 후 교체">
   <span class="en">GREETING</span>
-  <h2>한 그릇에 담기까지,<br class="br-d"> 지름길을 두지 않았습니다</h2>
+  <h2>찾아주시는 한 분께,<br class="br-d"> 오늘도 어제와 같은 한 상을 올립니다</h2>
   <p data-todo="대표 성함 확정 필요">대표 〈확인 예정〉</p>
   <span class="seal" aria-hidden="true" style="display:block; margin:28px auto 0;"></span>
 </div>
@@ -90,7 +106,7 @@
   <div class="section-head">
     <p class="chapter">TRUST</p>
     <h2 class="accent-underline">인정받은 맛</h2>
-    <p class="section-lead">인사동 본점에서 검증된 맛이 백화점과 해외로 이어지고 있습니다.</p>
+    <p class="section-lead">인사동에서 시작한 맛이 백화점과 해외 식탁까지 닿았습니다.</p>
   </div>
   <div class="achieve-grid">
     <div class="achieve-item">
@@ -128,6 +144,8 @@
 
 <script>
 (function () {
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.addEventListener('pageshow', function(){ window.scrollTo(0,0); });
   var h=document.getElementById('siteHeader');
   function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.46); }
   window.addEventListener('scroll', sc, {passive:true}); sc();

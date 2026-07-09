@@ -249,6 +249,10 @@ html { scroll-snap-type: none; }
 .roof-div { text-align: center; padding: clamp(24px,4vw,48px) 24px; }
 .roof-div img { width: clamp(280px,38vw,520px); opacity: .72; }
 
+/* 보리/꽃게 라인아트 모티프 divider */
+.motif-div { text-align: center; padding: clamp(30px,5vw,60px) 24px; }
+.motif-div svg { width: clamp(64px,8vw,96px); height: auto; color: var(--seal-red); opacity: .68; }
+
 /* 특징 아이콘 행 */
 .feat-row { display: flex; justify-content: center; gap: clamp(16px,3.5vw,58px); flex-wrap: wrap; max-width: 1040px; margin: 0 auto; padding: clamp(40px,6vw,72px) 24px; }
 .feat-item { text-align: center; max-width: 150px; }

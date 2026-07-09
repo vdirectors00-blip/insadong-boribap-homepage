@@ -143,6 +143,8 @@
 
 <script>
 (function () {
+  if('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.addEventListener('pageshow', function(){ window.scrollTo(0,0); });
   var h=document.getElementById('siteHeader');
   function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.52); }
   window.addEventListener('scroll', s, {passive:true}); s();

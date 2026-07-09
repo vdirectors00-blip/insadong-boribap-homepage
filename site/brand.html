@@ -20,6 +20,16 @@
   .achieve-item .svg-icon { width:34px; height:34px; stroke:var(--seal-red); stroke-width:1.5; fill:none; stroke-linecap:round; stroke-linejoin:round; margin:0 auto 12px; display:block; }
   .achieve-item h4 { font-family:var(--serif); font-weight:700; font-size:15px; color:var(--ink); margin-bottom:6px; }
   .achieve-item p { font-size:13px; line-height:1.6; color:var(--ink-soft); word-break:keep-all; }
+  /* 대표 인사말 레터 박스 */
+  .greeting-sec { background:var(--cream); padding:clamp(48px,7vw,88px) 24px; }
+  .greeting-card { max-width:660px; margin:0 auto; background:var(--white); border:1px solid rgba(42,39,36,.14); border-radius:12px; padding:clamp(40px,6vw,64px) clamp(28px,5vw,56px); text-align:center; box-shadow:0 22px 54px -34px rgba(40,26,14,.42); }
+  .greeting-card .en { font-family:var(--serif-en); font-size:13px; letter-spacing:.3em; text-indent:.3em; color:var(--seal-red); opacity:.85; display:block; margin-bottom:20px; }
+  .greeting-card h2 { font-family:var(--serif); font-weight:700; font-size:clamp(21px,2.8vw,30px); line-height:1.5; color:var(--ink); text-wrap:balance; margin-bottom:26px; }
+  .greeting-card .letter { font-size:16px; line-height:2.05; color:var(--ink-soft); word-break:keep-all; }
+  .greeting-card .letter br { content:""; display:block; margin-bottom:6px; }
+  .greeting-sign { margin-top:30px; padding-top:26px; border-top:1px solid rgba(42,39,36,.12); font-family:var(--serif); font-size:15.5px; color:var(--ink); letter-spacing:.02em; }
+  .greeting-sign b { font-weight:700; }
+  @media (max-width:900px){ .greeting-card .letter { font-size:15px; line-height:1.95; } }
 </style>
 </head>
 <body>
@@ -94,13 +104,22 @@
   </svg>
 </div>
 
-<!-- ===== 대표 인사말 (placeholder) ===== -->
-<div class="text-block" data-todo="대표 인사말 원문·성함 확보 후 교체">
-  <span class="en">GREETING</span>
-  <h2>찾아주시는 한 분께,<br class="br-d"> 오늘도 어제와 같은 한 상을 올립니다</h2>
-  <p data-todo="대표 성함 확정 필요">대표 〈확인 예정〉</p>
-  <span class="seal" aria-hidden="true" style="display:block; margin:28px auto 0;"></span>
-</div>
+<!-- ===== 대표 인사말 (레터 박스) ===== -->
+<section class="greeting-sec">
+  <div class="greeting-card" data-todo="대표 인사말 원문·성함은 고객 확인 후 확정 (현재 초안)">
+    <span class="en">GREETING</span>
+    <h2>찾아주시는 한 분께,<br class="br-d"> 오늘도 어제와 같은 한 상을 올립니다</h2>
+    <p class="letter">
+      인사동 골목을 찾아주시는 한 분 한 분께 늘 감사한 마음입니다.<br>
+      저희는 좋은 재료를 고르는 일부터 장을 담그는 일까지,<br class="br-d">
+      어느 하나 대충 넘기지 않으려 합니다.<br>
+      화려하진 않아도 매일 같은 정성으로 지은 따뜻한 한 상으로,<br class="br-d">
+      오늘도 편안한 한 끼 되시길 바랍니다.
+    </p>
+    <p class="greeting-sign">인사동보리밥 대표 <b>〈성함 확인 예정〉</b></p>
+    <span class="seal" aria-hidden="true" style="display:block; margin:26px auto 0;"></span>
+  </div>
+</section>
 
 <!-- ===== 실적 · 신뢰 (3무 제외) ===== -->
 <section class="page-section achieve">

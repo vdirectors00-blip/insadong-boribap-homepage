@@ -297,7 +297,7 @@ html { scroll-snap-type: none; }
 .fb.short { height: 100vh; height: 100svh; }
 
 /* 텍스트 블록 (여백 큰 정보/인사말) */
-.text-block { max-width: 720px; margin: 0 auto; text-align: center; padding: clamp(80px,11vw,150px) 24px; }
+.text-block { max-width: 720px; margin: 0 auto; text-align: center; padding: clamp(48px,7vw,92px) 24px; }
 .text-block .en { font-family: var(--serif-en); font-size: 14px; letter-spacing: .3em; text-indent: .3em; color: var(--seal-red); opacity: .85; display: block; margin-bottom: 22px; }
 .text-block h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(24px, 3.4vw, 40px); line-height: 1.5; color: var(--ink); text-wrap: balance; }
 .text-block p { font-size: 17px; line-height: 2; color: var(--ink-soft); margin-top: 24px; word-break: keep-all; }

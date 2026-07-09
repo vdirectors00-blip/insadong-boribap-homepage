@@ -84,6 +84,7 @@
     <span class="en">NEWS</span>
     <h1>소식</h1>
   </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
 </section>
 
 <!-- ===== 공지·이벤트 ===== -->
@@ -146,7 +147,7 @@
   if('scrollRestoration' in history) history.scrollRestoration='manual';
   window.addEventListener('pageshow', function(){ window.scrollTo(0,0); });
   var h=document.getElementById('siteHeader');
-  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.52); }
+  function s(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.85); }
   window.addEventListener('scroll', s, {passive:true}); s();
   var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
   if(!btn||!nav) return;

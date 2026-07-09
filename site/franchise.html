@@ -53,11 +53,12 @@
 
 <!-- ===== 상단 배너 (한옥 거리) ===== -->
 <section class="top-banner">
-  <img src="assets/img/hanok-2.jpg" alt="인사동 한옥 거리">
+  <img src="assets/img/franchise-hero.jpg" alt="인사동 한옥 거리">
   <div class="tb-inner">
     <span class="en">FRANCHISE</span>
     <h1>같은 길을 함께<br class="br-m"> 걸어가실 분을 찾습니다</h1>
   </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
 </section>
 
 <!-- ===== 짧은 소개 + 문의 폼 (원페이지) ===== -->
@@ -95,7 +96,7 @@
   if('scrollRestoration' in history) history.scrollRestoration='manual';
   window.addEventListener('pageshow', function(){ window.scrollTo(0,0); });
   var h=document.getElementById('siteHeader');
-  function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.46); }
+  function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.85); }
   window.addEventListener('scroll', sc, {passive:true}); sc();
   var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
   if(!btn||!nav) return;

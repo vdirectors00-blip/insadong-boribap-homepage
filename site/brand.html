@@ -52,6 +52,7 @@
     <span class="en">BRAND</span>
     <h1>좋은 재료를 아는 사람의 밥상</h1>
   </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
 </section>
 
 <!-- ===== 블록 1: 제조하는 브랜드 ===== -->
@@ -147,7 +148,7 @@
   if('scrollRestoration' in history) history.scrollRestoration='manual';
   window.addEventListener('pageshow', function(){ window.scrollTo(0,0); });
   var h=document.getElementById('siteHeader');
-  function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.46); }
+  function sc(){ h.classList.toggle('on-light', window.scrollY > window.innerHeight*0.85); }
   window.addEventListener('scroll', sc, {passive:true}); sc();
   var btn=document.getElementById('navToggle'), nav=document.getElementById('mNav');
   function setOpen(o){ nav.classList.toggle('open',o); btn.classList.toggle('is-open',o); btn.setAttribute('aria-expanded',o?'true':'false'); nav.setAttribute('aria-hidden',o?'false':'true'); document.body.classList.toggle('m-open',o); }

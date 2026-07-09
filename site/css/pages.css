@@ -248,7 +248,7 @@ html { scroll-snap-type: none; }
 
 /* 지붕라인 divider */
 .roof-div { text-align: center; padding: clamp(24px,4vw,48px) 24px; }
-.roof-div img { width: clamp(280px,38vw,520px); opacity: .72; }
+.roof-div img { width: clamp(280px,38vw,520px); margin-inline: auto; opacity: .72; }
 
 /* 보리/꽃게 라인아트 모티프 divider */
 .motif-div { text-align: center; padding: clamp(30px,5vw,60px) 24px; }

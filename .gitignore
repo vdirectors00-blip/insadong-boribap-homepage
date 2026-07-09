@@ -2,8 +2,10 @@
 사진,영상/
 참고자료/
 *.ai
+# hero 배경 영상(site/assets/video)은 배포에 포함, 그 외 mp4는 제외
 *.mp4
-!site/assets/video/*.mp4      # hero 배경 영상은 배포에 포함
+!site/assets/video/
+!site/assets/video/*.mp4
 *.pdf
 *.zip
 디자인가이드/*.jpg

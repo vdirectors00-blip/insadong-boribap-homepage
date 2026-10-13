@@ -1,5 +1,5 @@
 /* ==========================================================
-   인사동보리밥 — 메인 페이지 v1
+   그래이츠 — 메인 페이지 v1
    컨셉: 스토리텔링 · 깔끔 · 심플 · 모던 · 고급 · 따뜻함
    레퍼런스: boksoon.com (풀스크린 스냅 + 섹션당 메시지 1개)
    ========================================================== */
@@ -199,6 +199,7 @@ br.br-m { display: none; }
   gap: 5px;
   width: 30px; height: 30px;
   background: none; border: 0; padding: 0;
+  color: inherit;                    /* button 기본색(검정) 상속 끊김 방지 = 어두운 히어로 위 흰색 */
   cursor: pointer;
   z-index: 12;
 }
@@ -301,6 +302,10 @@ br.br-m { display: none; }
 
 
 /* 낙관 도장 — 스토리카드에서 추출한 진짜 전서체 인장 */
+/* 낙관(seal.png)은 '인사동보리밥' 글자가 새겨진 구브랜드 자산.
+   그래이츠 낙관 원본 수급 전까지 숨김. 새 파일 받으면 seal.png 교체 + 아래 한 줄 삭제. */
+.seal { display: none !important; }
+
 .seal {
   margin-top: 40px;
   width: 34px; height: 112px;
@@ -637,8 +642,10 @@ br.br-m { display: none; }
   .m-nav a { color: var(--white); font-family: var(--serif); font-size: 23px; letter-spacing: .1em; }
   body.m-open { overflow: hidden; }
   body.m-open .site-header { color: var(--white); }
-  body.m-open .logo-w { display: block; }
-  body.m-open .logo-k { display: none; }
+  /* 메뉴 열면 헤더를 흰색으로 쓰므로, 밝은 섹션에서 켜져 있던 크림 그라데이션은 끈다 */
+  body.m-open .site-header::before { opacity: 0; }
+  body.m-open .site-header .logo-w { display: block; }
+  body.m-open .site-header .logo-k { display: none; }
   .split { grid-template-columns: 1fr; }
   .split-photo { min-height: 58vw; position: relative; }
   .split-photo img { position: relative; }

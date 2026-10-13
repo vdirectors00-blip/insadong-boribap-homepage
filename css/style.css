@@ -184,6 +184,11 @@ br.br-m { display: none; }
   letter-spacing: .14em;
 }
 .header-utils .lang { opacity: .55; }
+
+/* 언어 전환 미구현(영문 페이지 없음) → KOR|ENG 토글 숨김.
+   영문 페이지 만들면 아래 한 줄만 지우면 복구됨 */
+.header-utils, .m-nav-lang { display: none !important; }
+
 .header-utils .lang.active { opacity: 1; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .header-utils .lang:hover { opacity: 1; }
 .lang-sep { width: 1px; height: 11px; background: currentColor; opacity: .4; }
